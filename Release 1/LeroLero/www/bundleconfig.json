@@ -40,5 +40,35 @@
     "inputFiles": [
       "plugins/jquery/jquery.js"
     ]
+  },
+  {
+    "outputFileName": "plugins/angular/angular-animate.min.js",
+    "inputFiles": [
+      "plugins/angular/angular-animate.js"
+    ]
+  },
+  {
+    "outputFileName": "plugins/angular/angular-aria.min.js",
+    "inputFiles": [
+      "plugins/angular/angular-aria.js"
+    ]
+  },
+  {
+    "outputFileName": "plugins/angular/angular-messages.min.js",
+    "inputFiles": [
+      "plugins/angular/angular-messages.js"
+    ]
+  },
+  {
+    "outputFileName": "plugins/angular_material/angular-material.min.js",
+    "inputFiles": [
+      "plugins/angular_material/angular-material.js"
+    ]
+  },
+  {
+    "outputFileName": "plugins/angular_material/angular-material.min.css",
+    "inputFiles": [
+      "plugins/angular_material/angular-material.css"
+    ]
   }
 ]

@@ -102,6 +102,13 @@ carregarArquivo([
 
     //Framework: AngularJS
     "plugins/angular/angular.js",
+    "plugins/angular/angular-animate.js",
+    "plugins/angular/angular-aria.js",
+    "plugins/angular/angular-messages.js",
+
+    //Framework: Angular Material
+    "plugins/angular_material/angular-material.css",
+    "plugins/angular_material/angular-material.js",
 
     //Estilos globais para todo o aplicativo.
     "css/global.css",
