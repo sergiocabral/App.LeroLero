@@ -1,26 +1,38 @@
 [
   {
-    "outputFileName": "index.min.html",
+    "outputFileName": "js/_init.min.js",
     "inputFiles": [
-      "index.html"
-    ]
-  },
-  {
-    "outputFileName": "js/app.min.js",
-    "inputFiles": [
-      "js/app.js"
-    ]
-  },
-  {
-    "outputFileName": "js/init-app.min.js",
-    "inputFiles": [
-      "js/init-app.js"
+      "js/_init.js"
     ]
   },
   {
     "outputFileName": "plugins/angularjs/angular.min.js",
     "inputFiles": [
       "plugins/angularjs/angular.js"
+    ]
+  },
+  {
+    "outputFileName": "plugins/xdk/init-dev.min.js",
+    "inputFiles": [
+      "plugins/xdk/init-dev.js"
+    ]
+  },
+  {
+    "outputFileName": "index.min.html",
+    "inputFiles": [
+      "index.html"
+    ]
+  },
+  {
+    "outputFileName": "css/global.min.css",
+    "inputFiles": [
+      "css/global.css"
+    ]
+  },
+  {
+    "outputFileName": "plugins/xdk/init-app.min.js",
+    "inputFiles": [
+      "plugins/xdk/init-app.js"
     ]
   }
 ]
