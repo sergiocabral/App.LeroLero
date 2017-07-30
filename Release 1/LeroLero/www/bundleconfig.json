@@ -70,5 +70,41 @@
     "inputFiles": [
       "plugins/angular_material/angular-material.css"
     ]
+  },
+  {
+    "outputFileName": "js/init.min.js",
+    "inputFiles": [
+      "js/init.js"
+    ]
+  },
+  {
+    "outputFileName": "js/class_Util.min.js",
+    "inputFiles": [
+      "js/class_Util.js"
+    ]
+  },
+  {
+    "outputFileName": "js/class_Site.min.js",
+    "inputFiles": [
+      "js/class_Site.js"
+    ]
+  },
+  {
+    "outputFileName": "js/class_NavegadorComum.min.js",
+    "inputFiles": [
+      "js/class_NavegadorComum.js"
+    ]
+  },
+  {
+    "outputFileName": "js/class_Cordova.min.js",
+    "inputFiles": [
+      "js/class_Cordova.js"
+    ]
+  },
+  {
+    "outputFileName": "plugins/angular/angular.min.js",
+    "inputFiles": [
+      "plugins/angular/angular.js"
+    ]
   }
 ]
