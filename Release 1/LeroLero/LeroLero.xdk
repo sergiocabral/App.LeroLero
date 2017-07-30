@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "61a9dbfd-d0d5-4ea0-991f-be63f4731473",
-      "lastModifiedDate": 1501367054589,
+      "lastModifiedDate": 1501378599555,
       "creationDate": 1501366114187
     },
     "sourceDirectory": "www",
@@ -70,7 +70,7 @@
         "certificateId_": "tXTUmdGn7U2yt81RhfihTw2",
         "cordovaCLIVersion_": "6.2.0",
         "crosswalkVersion_": "23",
-        "appName_": "Gerador de Lero Lero",
+        "appName_": "Lero Lero",
         "appID_": "cabral.lerolero",
         "appAccess_": {
           "mode": "whitelist",
@@ -94,7 +94,7 @@
         "excludedLibraries_": "",
         "appVersion_": "0.1",
         "appVersionCode_": "1",
-        "appDescription_": "Fale tudo sem falar nada",
+        "appDescription_": "Gerador de Lero Lero. Fale tudo sem falar nada.",
         "appAuthor_": "sergio@cabral.br.com",
         "signed_": true
       },
