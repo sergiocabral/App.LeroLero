@@ -1,5 +1,15 @@
-﻿//Determina se os arquivos carregados devem ser os minificados.
-window.minificado = false;
+﻿/**
+ * Retorna informação se as bibliotecas estão sendo carregadas minificadas.
+ */
+function minificado() {
+    var verificacao = true;
+    try {
+        return !eval("verificacao");    
+    }
+    catch (e) {
+        return true;
+    }
+}
 
 /**
  * Carrega uma lista de arquivos.
@@ -38,7 +48,7 @@ function carregarArquivo(bibliotecas, carregadoFunction, tipoPadrao) {
             var arquivo = bibliotecas.shift();
             var tipo = fExtensaoValida(arquivo, "js") ? "js" : fExtensaoValida(arquivo, "css") ? "css" : null;
             if (tipo != null) {
-                arquivo = !minificado ? arquivo : arquivo.substr(0, arquivo.length - tipo.length) + "min." + arquivo.substr(arquivo.length - tipo.length);
+                arquivo = !minificado() ? arquivo : arquivo.substr(0, arquivo.length - tipo.length) + "min." + arquivo.substr(arquivo.length - tipo.length);
                 arquivo = arquivo.replace(/\.min\.min\.(?=(js|css))/gi, ".min.");
             } else {
                 tipo = tipoPadrao;
@@ -91,4 +101,5 @@ carregarArquivo([
     "css/global.css"
 ], function () {
     //Inicializar aplicativo.
+    alert(minificado());
 });
