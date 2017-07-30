@@ -1,20 +1,20 @@
 ﻿'use strict';
 
-window.Site = function () {
+window.Angular = function (site) {
     /// <summary>
     /// Classe principal de controle do sistema inteiro.
     /// </summary>
     /// <returns type="object">Instancia.</returns>
 
     //Singleton
-    if (!Site._instancia) { Site._instancia = this; } else { return Site._instancia; }
+    if (!Angular._instancia) { Angular._instancia = this; } else { return Angular._instancia; }
 
     //Referência a this quando este não for acessível.
     var _this = this;
 
     //Instância classe que controle o aplicativo.
     //Usado nesta classe para manter padronização nas chamadas de função.
-    _this.Site = _this;
+    _this.Site = site;
 
     //##################################################
     //##################################################
@@ -23,12 +23,15 @@ window.Site = function () {
     //##################################################
     //Código específico a partir daqui.
 
-    //Veja o comentário relativo a cada classe abaixo nos seus respectivos arquivos.
-    //Cada classe é instanciada por cima dela mesma para desalocar o DOM. (se é que é possível)
-    _this.Util = window.Util = new Util(_this);
-    _this.Cordova = window.Cordova = new Cordova(_this);
-    _this.NavegadorComum = window.NavegadorComum = new NavegadorComum(_this);
-    _this.Angular = window.Angular = new Angular(_this);
+    _this.Inicializar = function () {
+        /// <summary>
+        /// Inicializa o framework Angular.
+        /// </summary>
+
+        var helloWorldApp = angular.module('app', [
+            'ngRoute'
+        ]);
+    }
 
     //Código específico termina daqui.
     //##################################################
@@ -38,8 +41,7 @@ window.Site = function () {
     //##################################################
     //Abaixo, apenas chamadas de inicialização (construtor)
 
-    _this.Site.Cordova.AtribuirEventos();
-    _this.Site.NavegadorComum.AtribuirEventos();
+    _this.Inicializar();
 
     return;
 };

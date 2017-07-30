@@ -124,5 +124,11 @@
     "inputFiles": [
       "plugins/angular/angular-resource.js"
     ]
+  },
+  {
+    "outputFileName": "js/class_Angular.min.js",
+    "inputFiles": [
+      "js/class_Angular.js"
+    ]
   }
 ]

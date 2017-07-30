@@ -123,6 +123,7 @@ carregarArquivo([
     "js/class_Util.js",
     "js/class_Cordova.js",
     "js/class_NavegadorComum.js",
+    "js/class_Angular.js",
 
 ], function () {
 
