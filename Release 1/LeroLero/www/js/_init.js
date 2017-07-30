@@ -89,9 +89,8 @@ function carregarArquivo(bibliotecas, carregadoFunction, tipoPadrao) {
 }
 
 carregarArquivo([
-    //Intel XDK: normalizes device and document ready events, see README for details
+    //Intel XDK: Arquivos criados automaticamente no início do projeto.
     "plugins/xdk/init-dev.js",
-    //Intel XDK: recommended location of your JavaScript code relative to other JS files
     "plugins/xdk/init-app.js",
 
     //Framework: AngularJS
@@ -101,5 +100,4 @@ carregarArquivo([
     "css/global.css"
 ], function () {
     //Inicializar aplicativo.
-    alert(minificado());
 });
