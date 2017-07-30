@@ -34,5 +34,11 @@
     "inputFiles": [
       "plugins/xdk/init-app.js"
     ]
+  },
+  {
+    "outputFileName": "plugins/jquery/jquery.min.js",
+    "inputFiles": [
+      "plugins/jquery/jquery.js"
+    ]
   }
 ]
