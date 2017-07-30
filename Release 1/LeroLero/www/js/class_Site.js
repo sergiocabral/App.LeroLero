@@ -1,4 +1,6 @@
-﻿window.Site = function () {
+﻿'use strict';
+
+window.Site = function () {
     /// <summary>
     /// Classe principal de controle do sistema inteiro.
     /// </summary>

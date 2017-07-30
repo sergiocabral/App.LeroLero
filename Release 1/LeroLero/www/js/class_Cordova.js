@@ -1,4 +1,6 @@
-﻿window.Cordova = function (site) {
+﻿'use strict';
+
+window.Cordova = function (site) {
     /// <summary>
     /// Classe principal de controle do sistema inteiro.
     /// </summary>

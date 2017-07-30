@@ -1,4 +1,6 @@
-﻿function minificado() {
+﻿'use strict';
+
+function minificado() {
     /// <summary>
     /// Retorna informação se as bibliotecas estão sendo carregadas minificadas.
     /// </summary>

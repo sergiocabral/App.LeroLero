@@ -1,4 +1,6 @@
-﻿window.NavegadorComum = function (site) {
+﻿'use strict';
+
+window.NavegadorComum = function (site) {
     /// <summary>
     /// Classe principal de controle do sistema inteiro.
     /// </summary>
