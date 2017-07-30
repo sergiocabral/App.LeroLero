@@ -106,5 +106,23 @@
     "inputFiles": [
       "plugins/angular/angular.js"
     ]
+  },
+  {
+    "outputFileName": "plugins/angular/angular-cookies.min.js",
+    "inputFiles": [
+      "plugins/angular/angular-cookies.js"
+    ]
+  },
+  {
+    "outputFileName": "plugins/angular/angular-route.min.js",
+    "inputFiles": [
+      "plugins/angular/angular-route.js"
+    ]
+  },
+  {
+    "outputFileName": "plugins/angular/angular-resource.min.js",
+    "inputFiles": [
+      "plugins/angular/angular-resource.js"
+    ]
   }
 ]

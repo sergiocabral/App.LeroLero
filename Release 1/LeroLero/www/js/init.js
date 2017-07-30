@@ -102,6 +102,9 @@ carregarArquivo([
 
     //Framework: AngularJS
     "plugins/angular/angular.js",
+    "plugins/angular/angular-route.js",
+    "plugins/angular/angular-resource.js",
+    "plugins/angular/angular-cookies.js",
     "plugins/angular/angular-animate.js",
     "plugins/angular/angular-aria.js",
     "plugins/angular/angular-messages.js",
