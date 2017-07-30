@@ -1,0 +1,26 @@
+[
+  {
+    "outputFileName": "index.min.html",
+    "inputFiles": [
+      "index.html"
+    ]
+  },
+  {
+    "outputFileName": "js/app.min.js",
+    "inputFiles": [
+      "js/app.js"
+    ]
+  },
+  {
+    "outputFileName": "js/init-app.min.js",
+    "inputFiles": [
+      "js/init-app.js"
+    ]
+  },
+  {
+    "outputFileName": "plugins/angularjs/angular.min.js",
+    "inputFiles": [
+      "plugins/angularjs/angular.js"
+    ]
+  }
+]
