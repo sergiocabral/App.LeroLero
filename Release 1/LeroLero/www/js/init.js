@@ -123,9 +123,7 @@ carregarArquivo([
     "js/class_Util.js",
     "js/class_Cordova.js",
     "js/class_Comportamento.js",
-
-    //Configurações do AngularJS
-    "js/angular_Base.js",
+    "js/class_Angular.js",
 
 ], function () {
 

@@ -2,7 +2,7 @@
 
 window.Util = function (site) {
     /// <summary>
-    /// Classe principal de controle do sistema inteiro.
+    /// Funcionalidades diversas de apoio.
     /// </summary>
     /// <returns type="object">Instancia.</returns>
 

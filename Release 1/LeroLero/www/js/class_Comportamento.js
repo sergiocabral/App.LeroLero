@@ -2,7 +2,7 @@
 
 window.Comportamento = function (site) {
     /// <summary>
-    /// Classe principal de controle do sistema inteiro.
+    /// Funcionalidades de comportamento JavaScript e visual CSS
     /// </summary>
     /// <returns type="object">Instancia.</returns>
 
@@ -33,7 +33,7 @@ window.Comportamento = function (site) {
         /// </summary>
         /// <param name="modo" type="boolean">Ativa ou desativa</param>
 
-        var fSplash = function () {
+        var fSplash = function (modo) {
             if (modo) {
                 $("html").attr("style", _this._backup_html_style);
                 $("body").attr("style", _this._backup_body_style);
@@ -47,10 +47,10 @@ window.Comportamento = function (site) {
             _this._backup_html_style = $("html").attr("style");
             _this._backup_body_style = $("body").attr("style");
 
-            $(document).ready(function () { fSplash(); });
+            $(document).ready(function () { setTimeout(function () { fSplash(modo); }, 1000); });
         }
         else {
-            fSplash();
+            fSplash(modo);
         }
     }
 

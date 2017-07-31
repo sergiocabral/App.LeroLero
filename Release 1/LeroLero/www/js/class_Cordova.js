@@ -2,7 +2,7 @@
 
 window.Cordova = function (site) {
     /// <summary>
-    /// Classe principal de controle do sistema inteiro.
+    /// Funcionalidades do ambiente Cordova, compilado para mobile.
     /// </summary>
     /// <returns type="object">Instancia.</returns>
 
