@@ -27,8 +27,7 @@ window.Site = function () {
     //Cada classe é instanciada por cima dela mesma para desalocar o DOM. (se é que é possível)
     _this.Util = window.Util = new Util(_this);
     _this.Cordova = window.Cordova = new Cordova(_this);
-    _this.NavegadorComum = window.NavegadorComum = new NavegadorComum(_this);
-    _this.Angular = window.Angular = new Angular(_this);
+    _this.Comportamento = window.Comportamento = new Comportamento(_this);
 
     //Código específico termina daqui.
     //##################################################
@@ -39,7 +38,7 @@ window.Site = function () {
     //Abaixo, apenas chamadas de inicialização (construtor)
 
     _this.Site.Cordova.AtribuirEventos();
-    _this.Site.NavegadorComum.AtribuirEventos();
+    _this.Site.Comportamento.Splash(false);
 
     return;
 };

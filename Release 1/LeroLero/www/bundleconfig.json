@@ -130,5 +130,17 @@
     "inputFiles": [
       "js/class_Angular.js"
     ]
+  },
+  {
+    "outputFileName": "js/angular_Base.min.js",
+    "inputFiles": [
+      "js/angular_Base.js"
+    ]
+  },
+  {
+    "outputFileName": "js/class_Comportamento.min.js",
+    "inputFiles": [
+      "js/class_Comportamento.js"
+    ]
   }
 ]

@@ -88,7 +88,7 @@ app.initEvents = function () {
         evt = "touchend";                                          // not optimum, but works
 
     el = document.getElementById("id_btnHello");
-    el.addEventListener(evt, myEventHandler, false);
+    if (el) el.addEventListener(evt, myEventHandler, false);
 
     // NOTE: ...you can put other miscellaneous init stuff in this function...
     // NOTE: ...and add whatever else you want to do now that the app has started...

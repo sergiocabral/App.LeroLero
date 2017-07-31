@@ -1,13 +1,13 @@
 ﻿'use strict';
 
-window.Angular = function (site) {
+window.Comportamento = function (site) {
     /// <summary>
     /// Classe principal de controle do sistema inteiro.
     /// </summary>
     /// <returns type="object">Instancia.</returns>
 
     //Singleton
-    if (!Angular._instancia) { Angular._instancia = this; } else { return Angular._instancia; }
+    if (!Comportamento._instancia) { Comportamento._instancia = this; } else { return Comportamento._instancia; }
 
     //Referência a this quando este não for acessível.
     var _this = this;
@@ -16,6 +16,10 @@ window.Angular = function (site) {
     //Usado nesta classe para manter padronização nas chamadas de função.
     _this.Site = site;
 
+    //Backup do style do html e body para configurar splash carregamento
+    _this._backup_html_style = undefined;
+    _this._backup_body_style = undefined;
+
     //##################################################
     //##################################################
     //##################################################
@@ -23,14 +27,31 @@ window.Angular = function (site) {
     //##################################################
     //Código específico a partir daqui.
 
-    _this.Inicializar = function () {
+    _this.Splash = function (modo) {
         /// <summary>
-        /// Inicializa o framework Angular.
+        /// Exibe ou oculta a tela de Carregamento
         /// </summary>
+        /// <param name="modo" type="boolean">Ativa ou desativa</param>
 
-        var helloWorldApp = angular.module('app', [
-            'ngRoute'
-        ]);
+        var fSplash = function () {
+            if (modo) {
+                $("html").attr("style", _this._backup_html_style);
+                $("body").attr("style", _this._backup_body_style);
+            } else {
+                $("html").attr("style", "");
+                $("body").attr("style", "");
+            }
+        }
+
+        if (_this._backup_html_style == undefined) {
+            _this._backup_html_style = $("html").attr("style");
+            _this._backup_body_style = $("body").attr("style");
+
+            $(document).ready(function () { fSplash(); });
+        }
+        else {
+            fSplash();
+        }
     }
 
     //Código específico termina daqui.
@@ -40,8 +61,6 @@ window.Angular = function (site) {
     //##################################################
     //##################################################
     //Abaixo, apenas chamadas de inicialização (construtor)
-
-    _this.Inicializar();
 
     return;
 };
