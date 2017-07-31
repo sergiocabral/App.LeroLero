@@ -38,7 +38,7 @@ window.Site = function () {
     //Abaixo, apenas chamadas de inicialização (construtor)
 
     _this.Site.Cordova.AtribuirEventos();
-    _this.Site.Comportamento.Splash(false);
+    setTimeout(function () { _this.Site.Comportamento.Splash(false); }, 1000);
 
     return;
 };
