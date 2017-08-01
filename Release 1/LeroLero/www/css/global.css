@@ -1,3 +1,40 @@
-﻿body {
+﻿/* Animação de transição: entrada da tela. */
+@keyframes entrada {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Animação de transição: saída da tela. */
+@keyframes saida {
+    to {
+        opacity: 0; 
+    }
+}
+
+.ng-enter {
+    animation: entrada 0.5s both ease-in;
+    z-index: 102;
+}
+
+.ng-leave {
+    animation: saida 0.5s both ease-in;
+    z-index: 101;
+}
+
+body {
+    background-color: black;
+}
+
+.conteudo {
     background-color: white;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    text-align: center;
+    padding-top: 200px;
+    width: 100%;
 }

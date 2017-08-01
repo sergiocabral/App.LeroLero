@@ -35,9 +35,15 @@ window.Angular = function (site) {
         /// Inicializa o framework AngularJS
         /// </summary>
 
-        _this.App = angular.module('app-mobile', ['ngRoute']);
+        _this.App = angular.module('app-mobile', [
+            'ngRoute',
+            'ngAnimate']);
 
         _this.App.config(['$routeProvider', _this.Routes]);
+
+        _this.App.controller('controller', ['$scope', function ($scope) {
+            $scope.classCss = "base";
+        }]);
 
         angular.bootstrap(document, ['app-mobile']);
     }
@@ -80,6 +86,7 @@ window.Angular = function (site) {
 
         $routeProvider
 			.when('/inicio', fWhenConfig("inicio"))
+			.when('/sobre', fWhenConfig("sobre"))
             .otherwise({ redirectTo: '/inicio' });
     }
 

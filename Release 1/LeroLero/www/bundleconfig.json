@@ -250,5 +250,29 @@
     "inputFiles": [
       "js/menu_principal.js"
     ]
+  },
+  {
+    "outputFileName": "js/view_sobre.min.js",
+    "inputFiles": [
+      "js/view_sobre.js"
+    ]
+  },
+  {
+    "outputFileName": "html/view_sobre.min.html",
+    "inputFiles": [
+      "html/view_sobre.html"
+    ]
+  },
+  {
+    "outputFileName": "css/view_sobre.min.css",
+    "inputFiles": [
+      "css/view_sobre.css"
+    ]
+  },
+  {
+    "outputFileName": "css/view_inicio.min.css",
+    "inputFiles": [
+      "css/view_inicio.css"
+    ]
   }
 ]
