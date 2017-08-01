@@ -16,18 +16,19 @@ window.Angular = function (site) {
     //Usado nesta classe para manter padronização nas chamadas de função.
     _this.Site = site;
 
-    //Aplicação angular
-    _this.App = undefined;
-
-    //Escopo do controller em execução.
-    _this.ControllerScope = undefined;
-
     //##################################################
     //##################################################
     //##################################################
     //##################################################
     //##################################################
     //Código específico a partir daqui.
+
+
+    //Aplicação angular
+    _this.App = undefined;
+
+    //Escopo do controller em execução.
+    _this.ControllerScope = undefined;
 
     _this.Inicializar = function () {
         /// <summary>
@@ -78,19 +79,8 @@ window.Angular = function (site) {
         };
 
         $routeProvider
-			.when('/', fWhenConfig("entrada"))
-            .when('/opcao1', fWhenConfig("teste1"))
-            .when('/opcao2', fWhenConfig("teste2"))
-            .otherwise({ redirectTo: '/' });
+			.when('/inicio', fWhenConfig("entrada"))
+            .otherwise({ redirectTo: '/inicio' });
     }
 
-    //Código específico termina daqui.
-    //##################################################
-    //##################################################
-    //##################################################
-    //##################################################
-    //##################################################
-    //Abaixo, apenas chamadas de inicialização (construtor)
-
-    return;
 };

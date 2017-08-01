@@ -16,16 +16,16 @@ window.Comportamento = function (site) {
     //Usado nesta classe para manter padronização nas chamadas de função.
     _this.Site = site;
 
-    //Backup do style do html e body para configurar splash carregamento
-    _this._backup_html_style = undefined;
-    _this._backup_body_style = undefined;
-
     //##################################################
     //##################################################
     //##################################################
     //##################################################
     //##################################################
     //Código específico a partir daqui.
+
+    //Backup do style do html e body para configurar splash carregamento
+    _this._backup_html_style = undefined;
+    _this._backup_body_style = undefined;
 
     _this.Splash = function (modo) {
         /// <summary>
@@ -54,13 +54,4 @@ window.Comportamento = function (site) {
         }
     }
 
-    //Código específico termina daqui.
-    //##################################################
-    //##################################################
-    //##################################################
-    //##################################################
-    //##################################################
-    //Abaixo, apenas chamadas de inicialização (construtor)
-
-    return;
 };

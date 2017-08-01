@@ -30,17 +30,8 @@ window.Site = function () {
     _this.Comportamento = window.Comportamento = new Comportamento(_this);
     _this.Angular = window.Angular = new Angular(_this);
 
-    //Código específico termina daqui.
-    //##################################################
-    //##################################################
-    //##################################################
-    //##################################################
-    //##################################################
-    //Abaixo, apenas chamadas de inicialização (construtor)
-
     _this.Site.Cordova.AtribuirEventos();
-    _this.Site.Comportamento.Splash(false);
     _this.Angular.Inicializar();
+    _this.Site.Comportamento.Splash(false);
 
-    return;
 };
