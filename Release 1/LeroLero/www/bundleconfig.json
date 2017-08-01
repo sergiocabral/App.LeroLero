@@ -166,5 +166,41 @@
     "inputFiles": [
       "views/entrada.html"
     ]
+  },
+  {
+    "outputFileName": "html/view_teste2.min.html",
+    "inputFiles": [
+      "html/view_teste2.html"
+    ]
+  },
+  {
+    "outputFileName": "html/view_teste1.min.html",
+    "inputFiles": [
+      "html/view_teste1.html"
+    ]
+  },
+  {
+    "outputFileName": "html/view_entrada.min.html",
+    "inputFiles": [
+      "html/view_entrada.html"
+    ]
+  },
+  {
+    "outputFileName": "css/view_teste2.min.css",
+    "inputFiles": [
+      "css/view_teste2.css"
+    ]
+  },
+  {
+    "outputFileName": "css/view_teste1.min.css",
+    "inputFiles": [
+      "css/view_teste1.css"
+    ]
+  },
+  {
+    "outputFileName": "css/view_entrada.min.css",
+    "inputFiles": [
+      "css/view_entrada.css"
+    ]
   }
 ]
