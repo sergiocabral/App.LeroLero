@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "61a9dbfd-d0d5-4ea0-991f-be63f4731473",
-      "lastModifiedDate": 1501436963661,
+      "lastModifiedDate": 1501551725425,
       "creationDate": 1501366114187
     },
     "sourceDirectory": "www",
@@ -15,43 +15,7 @@
     "libraries": [],
     "serviceMethods": [],
     "cordovaPluginsDirectory": "plugins",
-    "cordovaPlugins": [
-      {
-        "id": "cordova-plugin-statusbar",
-        "version": "2.1.3",
-        "originType": "cordova.io",
-        "selectedState": "Included",
-        "name": "StatusBar",
-        "origin": "cordova-plugin-statusbar",
-        "data": {},
-        "paramvals": {},
-        "permissions": {},
-        "dependsOn": [],
-        "dependedBy": [],
-        "topLevel": true,
-        "checksum": "c0146fbc",
-        "gitref": "",
-        "cordovaVersion": ">=3.0.0",
-        "description": "Cordova StatusBar Plugin"
-      },
-      {
-        "id": "cordova-plugin-device",
-        "version": "1.1.2",
-        "selectedState": "Included",
-        "originType": "cordova.io",
-        "name": "Device",
-        "origin": "cordova-plugin-device",
-        "data": {},
-        "paramvals": {},
-        "permissions": {},
-        "dependsOn": [],
-        "dependedBy": [],
-        "topLevel": true,
-        "checksum": "2373ccea",
-        "gitref": "",
-        "description": "Cordova Device Plugin"
-      }
-    ],
+    "cordovaPlugins": [],
     "buildConfigurations": {
       "Android": {
         "platform_": "android",

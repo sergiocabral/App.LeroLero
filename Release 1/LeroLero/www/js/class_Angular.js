@@ -16,6 +16,9 @@ window.Angular = function (site) {
     //Usado nesta classe para manter padronização nas chamadas de função.
     _this.Site = site;
 
+    //Aplicação angular
+    _this.App = undefined;
+
     //##################################################
     //##################################################
     //##################################################
@@ -28,13 +31,43 @@ window.Angular = function (site) {
         /// Inicializa o framework AngularJS
         /// </summary>
 
-        var appMobile = angular.module('app-mobile', ['ngRoute']);
+        _this.App = angular.module('app-mobile', ['ngRoute']);
 
-        appMobile.controller("app-mobile-controller", function ($scope) {
-            $scope.teste = "hahaha";
-        });
+        _this.App.config(_this.Routes);
+
+        _this.App.controller("controller-entrada", _this.ControllerEntrada);
+        _this.App.controller("controller-teste1", _this.ControllerTeste1);
+        _this.App.controller("controller-teste2", _this.ControllerTeste2);
 
         angular.bootstrap(document, ['app-mobile']);
+    }
+
+    _this.Routes = function ($routeProvider) {
+        $routeProvider
+			.when('/', {
+			    templateUrl: 'views/entrada.html',
+			    controller: 'controller-entrada'
+			})
+			.when('/opcao1', {
+			    templateUrl: 'views/teste1.html',
+			    controller: 'controller-teste1'
+			})
+			.when('/opcao2', {
+			    templateUrl: 'views/teste2.html',
+			    controller: 'controller-teste2'
+			});
+    }
+
+    _this.ControllerEntrada = function ($scope) {
+        $scope.quem = "entrada";
+    }
+
+    _this.ControllerTeste1 = function ($scope) {
+        $scope.quem = "teste 1";
+    }
+
+    _this.ControllerTeste2 = function ($scope) {
+        $scope.quem = "teste 2";
     }
 
     //Código específico termina daqui.

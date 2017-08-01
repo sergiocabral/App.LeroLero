@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html style="background-image: url(img/loading.gif); background-position: center; background-repeat: no-repeat; background-color: #15191F; background-size: contain;">
+<html style="background-image: url(img/loading.gif); background-position: center; background-repeat: no-repeat; background-color: white; background-size: contain;">
     <head>
 
         <title>Gerador de Lero Lero</title>
@@ -17,9 +17,17 @@
         <script src="cordova.js"></script>
 
     </head>
-    <body style="display: none;" ng-controller="app-mobile-controller">
+    <body style="display: none;">
         
-       <h1>Teste: {{ teste }}</h1>
+        <div>
+            <a href="#!">Home</a>
+            <a href="#!opcao1">Opção 1</a>
+            <a href="#!opcao2">Opção 2</a>
+        </div>
+
+        <div ng-view></div>
+
+        <div>Fim</div>
 
         <script src="js/init.js"></script>
 

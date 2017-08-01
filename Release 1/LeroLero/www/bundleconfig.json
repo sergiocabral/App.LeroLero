@@ -142,5 +142,29 @@
     "inputFiles": [
       "js/class_Comportamento.js"
     ]
+  },
+  {
+    "outputFileName": "views/teste.min.html",
+    "inputFiles": [
+      "views/teste.html"
+    ]
+  },
+  {
+    "outputFileName": "views/teste2.min.html",
+    "inputFiles": [
+      "views/teste2.html"
+    ]
+  },
+  {
+    "outputFileName": "views/teste1.min.html",
+    "inputFiles": [
+      "views/teste1.html"
+    ]
+  },
+  {
+    "outputFileName": "views/entrada.min.html",
+    "inputFiles": [
+      "views/entrada.html"
+    ]
   }
 ]

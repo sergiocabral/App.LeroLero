@@ -1,18 +1,1 @@
-{
-    "cordova-plugin-device": {
-        "source": {
-            "type": "local",
-            "path": "C:\\Users\\Sergio\\AppData\\Local\\Intel\\XDK\\xdk\\components\\server\\cordova\\cordova-plugins\\cordova-plugin-device"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-statusbar": {
-        "source": {
-            "type": "local",
-            "path": "C:\\Users\\Sergio\\AppData\\Local\\Intel\\XDK\\xdk\\components\\server\\cordova\\cordova-plugins\\cordova-plugin-statusbar"
-        },
-        "is_top_level": true,
-        "variables": {}
-    }
-}
+{}
