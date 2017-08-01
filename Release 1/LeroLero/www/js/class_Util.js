@@ -43,6 +43,40 @@ window.Util = function (site) {
         return window.minificado();
     };
 
+    _this.ExtensaoDoArquivo = function (arquivo) {
+        /// <summary>
+        /// Determina o tipo de arquivo retornando a extensão do mesmo.
+        /// </summary>
+        /// <param name="arquivo" type="string">Nome do arquivo.</param>
+        /// <returns type="string">Extensão do arquivo.</returns>
+
+        if (arquivo.indexOf(".") < 0) {
+            return "";
+        } else {
+            return arquivo.replace(/^.*\./g, "");
+        }
+    }
+
+    _this.ArquivoMinificado = function (arquivo) {
+        /// <summary>
+        /// Recebe um arquivo e retorna a nome do arquivo minificado.
+        /// </summary>
+        /// <param name="arquivo" type="string">Nome do arquivo</param>
+        /// <returns type="string">Nome do arquivo minificado.</returns>
+
+        if (_this.Minificado()) {
+            var extensao = _this.ExtensaoDoArquivo(arquivo);
+            if (extensao) {
+                var extensaoMin = "min." + extensao;
+                if (arquivo.substr(arquivo.length - extensaoMin.length) != extensaoMin) {
+                    var arquivoSemExtensao = arquivo.substr(0, arquivo.length - extensao.length);
+                    return arquivoSemExtensao + extensaoMin;
+                }
+            }
+        }
+        return arquivo;
+    }
+
     _this.ToString = function (obj) {
         /// <summary>
         /// Converte um objeto em string.

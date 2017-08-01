@@ -202,5 +202,23 @@
     "inputFiles": [
       "css/view_entrada.css"
     ]
+  },
+  {
+    "outputFileName": "js/view_entrada.min.js",
+    "inputFiles": [
+      "js/view_entrada.js"
+    ]
+  },
+  {
+    "outputFileName": "js/view_teste2.min.js",
+    "inputFiles": [
+      "js/view_teste2.js"
+    ]
+  },
+  {
+    "outputFileName": "js/view_teste1.min.js",
+    "inputFiles": [
+      "js/view_teste1.js"
+    ]
   }
 ]
