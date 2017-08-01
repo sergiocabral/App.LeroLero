@@ -54,4 +54,13 @@ window.Comportamento = function (site) {
         }
     }
 
+    _this.CarregarMenu = function () {
+        var arquivoHtml = _this.Site.Util.ArquivoMinificado("html/menu_principal.html");
+        var arquivoCss = _this.Site.Util.ArquivoMinificado("css/menu_principal.css");
+        var arquivoJs = _this.Site.Util.ArquivoMinificado("js/menu_principal.js");
+
+        $(".tela > .menu_principal").load(arquivoHtml, function () {
+            _this.Site.Util.CarregarArquivos([arquivoCss, arquivoJs]);
+        });
+    };
 };

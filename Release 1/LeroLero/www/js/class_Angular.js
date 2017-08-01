@@ -79,7 +79,7 @@ window.Angular = function (site) {
         };
 
         $routeProvider
-			.when('/inicio', fWhenConfig("entrada"))
+			.when('/inicio', fWhenConfig("inicio"))
             .otherwise({ redirectTo: '/inicio' });
     }
 

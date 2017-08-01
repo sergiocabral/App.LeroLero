@@ -57,7 +57,7 @@ window.Util = function (site) {
         }
     }
 
-    _this.ArquivoMinificado = function (arquivo) {
+    _this.ArquivoMinificado = function(arquivo) {
         /// <summary>
         /// Recebe um arquivo e retorna a nome do arquivo minificado.
         /// </summary>

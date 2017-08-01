@@ -220,5 +220,35 @@
     "inputFiles": [
       "js/view_teste1.js"
     ]
+  },
+  {
+    "outputFileName": "js/view_inicio.min.js",
+    "inputFiles": [
+      "js/view_inicio.js"
+    ]
+  },
+  {
+    "outputFileName": "html/view_inicio.min.html",
+    "inputFiles": [
+      "html/view_inicio.html"
+    ]
+  },
+  {
+    "outputFileName": "html/menu_principal.min.html",
+    "inputFiles": [
+      "html/menu_principal.html"
+    ]
+  },
+  {
+    "outputFileName": "css/menu_principal.min.css",
+    "inputFiles": [
+      "css/menu_principal.css"
+    ]
+  },
+  {
+    "outputFileName": "js/menu_principal.min.js",
+    "inputFiles": [
+      "js/menu_principal.js"
+    ]
   }
 ]
