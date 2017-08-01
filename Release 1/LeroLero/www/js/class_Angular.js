@@ -24,33 +24,45 @@ window.Angular = function (site) {
     //Código específico a partir daqui.
 
 
-    //Aplicação angular
-    _this.App = undefined;
-
-    //Escopo do controller em execução.
-    _this.ControllerScope = undefined;
-
+    //Objetos instanciados do angular.
+    _this.ConteudoModule = undefined;
+    _this.ConteudoControllerScope = undefined;
+    _this.MenuModule = undefined;
+    
     _this.Inicializar = function () {
         /// <summary>
         /// Inicializa o framework AngularJS
         /// </summary>
 
-        _this.App = angular.module('app-mobile', [
-            'ngRoute',
-            'ngAnimate']);
+        _this.ConteudoModule = angular
+            .module('conteudo-module', ['ngRoute', 'ngAnimate', 'ngMaterial'])
+            .config(['$routeProvider', _this.RoutesConteudo]);
 
-        _this.App.config(['$routeProvider', _this.Routes]);
+        angular.bootstrap(angular.element('.tela > .conteudo'), ['conteudo-module']);
 
-        _this.App.controller('controller', ['$scope', function ($scope) {
-            $scope.classCss = "base";
-        }]);
+        _this.MenuModule = angular
+            .module('menu-module', ['ngMaterial'])
+            .controller('menu-controller', ['$scope', '$mdSidenav', _this.ControllerMenu]);
 
-        angular.bootstrap(document, ['app-mobile']);
+        angular.bootstrap(angular.element('.tela > .menu'), ['menu-module']);
     }
 
-    _this.Routes = function($routeProvider) {
+    _this.ControllerMenu = function ($scope, $mdSidenav) {
         /// <summary>
-        /// Configura as rotas do Angular.
+        /// Controller do menu principal
+        /// </summary>
+        /// <param name="$scope" type="object">Escopo do controller.</param>
+        /// <param name="$mdSidenav" type="object">Provider do menu.</param>
+
+        $scope.teste = "hahaha";
+        $scope.show = function (val) {
+            console.log(val);
+        };
+    }
+
+    _this.RoutesConteudo = function ($routeProvider) {
+        /// <summary>
+        /// Configura as rotas para o conteúdo.
         /// </summary>
         /// <param name="$routeProvider" type="object">Provider</param>
         
@@ -70,13 +82,13 @@ window.Angular = function (site) {
                     _this.Site.Util.CarregarArquivos(arquivoCss);
                     return arquivoHtml;
                 },
-                controllerAs: "controller-" + nome,
+                controllerAs: nome + "-controller",
                 controller: ['$scope', '$http', '$location', '$timeout', '$route',
                     function ($scope, $http, $location, $timeout, $route) {
                         $timeout(function () {
                             $http.get(arquivoJs)
                                     .then(function (response) {
-                                        _this.ControllerScope = $scope;
+                                        _this.ConteudoControllerScope = $scope;
                                         eval(response.data);
                                     });
                         });

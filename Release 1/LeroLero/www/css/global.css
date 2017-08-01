@@ -1,4 +1,4 @@
-﻿/* Animação de transição: entrada da tela. */
+﻿/* Animação de transição: ENTRADA da tela. */
 @keyframes entrada {
     from {
         transform: translateY(100%);
@@ -8,27 +8,31 @@
     }
 }
 
-/* Animação de transição: saída da tela. */
+/* Animação de transição: SAÍDA da tela. */
 @keyframes saida {
     to {
         opacity: 0; 
     }
 }
 
+/* Animação Angular: ENTRADA do elemento. */
 .ng-enter {
     animation: entrada 0.5s both ease-in;
     z-index: 102;
 }
 
+/* Animação Angular: SAÍDA do elemento. */
 .ng-leave {
     animation: saida 0.5s both ease-in;
     z-index: 101;
 }
 
+/* Base da tela. */
 body {
     background-color: black;
 }
 
+/* Base do conteúdo. */
 .conteudo {
     background-color: white;
     position: fixed;

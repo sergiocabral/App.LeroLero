@@ -32,7 +32,6 @@ window.Site = function () {
 
     _this.Site.Cordova.AtribuirEventos();
     _this.Angular.Inicializar();
-    _this.Site.Comportamento.CarregarMenu();
     _this.Site.Comportamento.Splash(false);
 
 };
