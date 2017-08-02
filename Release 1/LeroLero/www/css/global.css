@@ -50,7 +50,12 @@ body {
 
 /* Menu lateral. Para ficar abaixo da barra fixa. */
 .menu md-sidenav {
-    padding-top: 3em;
+    padding-top: 4em;
+}
+@media (max-width: 959px) and (min-width: 0) and (orientation: landscape) {
+    .menu md-sidenav {
+        padding-top: 3em;
+    }
 }
 
 /* Base do conteúdo. */
