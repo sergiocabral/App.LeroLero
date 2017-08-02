@@ -54,4 +54,62 @@ window.Comportamento = function (site) {
         }
     }
 
+    _this.MenuLateral = function (modo) {
+        /// <summary>
+        /// Exibe ou esconde menu lateral.
+        /// </summary>
+        /// <param name="modo" type="boolean">Exibe ou esconde menu.</param>
+        /// <returns type="boolean">Resposta se menu está exibido.</returns>
+
+        return _this.Site.Angular.MenuLateral(modo);
+    }
+
+    _this.FecharAplicativo = function () {
+        /// <summary>
+        /// Fechar aplicativo.
+        /// </summary>
+
+        if (_this.Site.Cordova.Ativo()) {
+            _this.Site.Cordova.FecharAplicativo();
+            return;
+        }
+
+        var browserName = navigator.appName;
+        var browserVer = parseInt(navigator.appVersion);
+
+        if (browserName == "Microsoft Internet Explorer") {
+            var ie7 = (document.all && !window.opera && window.XMLHttpRequest) ? true : false;
+            if (ie7) {
+                //Para fechar sem confirmação no IE7 e versões superiores.
+                window.open('', '_parent', '');
+                window.close();
+            } else {
+                //Para fechar sem confirmação no IE6
+                this.focus();
+                self.opener = this;
+                self.close();
+            }
+        } else {
+            //Para outros navegadores diferentes do IE
+            //Exceto Firefoxque não suporta auto fechamento.
+            try {
+                this.focus();
+                self.opener = this;
+                self.close();
+            } catch (e) {
+
+            }
+
+            try {
+                window.open('', '_self', '');
+                window.close();
+            } catch (e) {
+
+            }
+        }
+
+        //no que tudo o mais falhar, direciona para tela em branco.
+        document.location.href = "about:blank";
+    }
+
 };

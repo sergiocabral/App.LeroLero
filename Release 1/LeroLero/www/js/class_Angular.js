@@ -27,7 +27,10 @@ window.Angular = function (site) {
     //Objetos instanciados do angular.
     _this.ConteudoModule = undefined;
     _this.ConteudoControllerScope = undefined;
-    _this.MenuModule = undefined;
+    _this.TelaModule = undefined;
+
+    //Função para abrir ou fechar o menu lateral.
+    _this.MenuLateral = function () { };
     
     _this.Inicializar = function () {
         /// <summary>
@@ -38,17 +41,17 @@ window.Angular = function (site) {
             .module('conteudo-module', ['ngRoute', 'ngAnimate', 'ngMaterial'])
             .config(['$routeProvider', _this.ConteudoRoutes]);
 
-        _this.MenuModule = angular
-            .module('menu-module', ['ngMaterial'])
-            .config(['$mdThemingProvider', _this.MenuTheming])
-            .controller('menu-controller', ['$scope', '$mdSidenav', '$location', '$mdColors', _this.MenuController]);
+        _this.TelaModule = angular
+            .module('tela-module', ['ngMaterial'])
+            .config(['$mdThemingProvider', _this.TelaTheming])
+            .controller('tela-controller', ['$scope', '$mdSidenav', '$location', '$mdColors', _this.TelaController]);
 
-        angular.bootstrap(angular.element('.tela'), ['menu-module', 'conteudo-module']);
+        angular.bootstrap(angular.element('.tela'), ['tela-module', 'conteudo-module']);
     };
 
-    _this.MenuTheming = function ($mdThemingProvider) {
+    _this.TelaTheming = function ($mdThemingProvider) {
         /// <summary>
-        /// Configuração do tema do menu.
+        /// Configuração do tema do tela.
         /// </summary>
         /// <param name="$mdThemingProvider" type="object">Provider de tema</param>
 
@@ -59,12 +62,26 @@ window.Angular = function (site) {
             .warnPalette('red');
     };
 
-    _this.MenuController = function ($scope, $mdSidenav, $location, $mdColors) {
+    _this.TelaController = function ($scope, $mdSidenav, $location, $mdColors) {
         /// <summary>
-        /// Controller do menu principal
+        /// Controller do tela principal
         /// </summary>
         /// <param name="$scope" type="object">Escopo do controller.</param>
-        /// <param name="$mdSidenav" type="object">Provider do menu.</param>
+        /// <param name="$mdSidenav" type="object">Provider do tela.</param>
+
+        if (_this.MenuLateral() === undefined) {
+            _this.MenuLateral = function (modo) {
+                var menu = $mdSidenav('menu-principal');
+                if (modo !== undefined) {
+                    if (modo) {
+                        menu.open();
+                    } else {
+                        menu.close();
+                    }
+                }
+                return menu.isOpen();
+            }
+        }
 
         $scope.menuAtivo = function (path) {
             return path && $location.path().substr(0, path.length) === path;
@@ -80,6 +97,11 @@ window.Angular = function (site) {
             }
         };
         
+        $scope.fechar = function () {
+            _this.Site.Comportamento.FecharAplicativo();
+            console.log("fechar");
+        }
+
         $scope.backgroundColor = function (path) {
             return $scope.menuAtivo(path) ? $mdColors.getThemeColor('default-primary-200') : 'auto';
         }
@@ -87,10 +109,6 @@ window.Angular = function (site) {
         $scope.textColor = function (path) {
             return $scope.menuAtivo(path) ? $mdColors.getThemeColor('default-primary-900') : 'auto';
         }
-
-        $scope.onSwipe = function (ev) {
-            alert('You swiped left!!');
-        };
     };
 
     _this.ConteudoRoutes = function ($routeProvider) {

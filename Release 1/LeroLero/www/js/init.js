@@ -110,6 +110,7 @@ carregarArquivo([
     "plugins/angular/angular-animate.js",
     "plugins/angular/angular-aria.js",
     "plugins/angular/angular-messages.js",
+    "plugins/angular/angular-touch.js",
 
     //Framework: Angular Material
     "plugins/angular_material/angular-material.css",

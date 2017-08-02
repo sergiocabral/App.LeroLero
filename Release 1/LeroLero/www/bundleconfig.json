@@ -280,5 +280,11 @@
     "inputFiles": [
       "plugins/angular_material/material-icons.css"
     ]
+  },
+  {
+    "outputFileName": "plugins/angular/angular-touch.min.js",
+    "inputFiles": [
+      "plugins/angular/angular-touch.js"
+    ]
   }
 ]

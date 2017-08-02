@@ -44,7 +44,7 @@ window.Cordova = function (site) {
         /// <param name="e" type="event">Dados do evento.</param>
         /// <returns type="boolean">Quando ==false interrompe o evento.</returns>
 
-        alert("_backbuttonFunction");
+        _this.Site.Comportamento.MenuLateral(!_this.Site.Comportamento.MenuLateral());
 
         if (e) { e.preventDefault(); }
         return false;
@@ -57,7 +57,7 @@ window.Cordova = function (site) {
         /// <param name="e" type="event">Dados do evento.</param>
         /// <returns type="boolean">Quando ==false interrompe o evento.</returns>
         
-        alert("_menubuttonFunction");
+        _this.Site.Comportamento.MenuLateral(!_this.Site.Comportamento.MenuLateral());
 
         e.preventDefault();
         return false;
@@ -79,6 +79,14 @@ window.Cordova = function (site) {
             document.addEventListener("menubutton", _this._menubuttonFunction, false);
         }, false);
 
+    }
+
+    _this.FecharAplicativo = function () {
+        /// <summary>
+        /// Fecha o aplicativo no ambiente Cordova.
+        /// </summary>
+
+        navigator.app.exitApp();
     }
 
 };
