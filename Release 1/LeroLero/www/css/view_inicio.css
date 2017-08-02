@@ -1,1 +1,16 @@
-﻿
+﻿.conteudo .inicio {
+    text-align: center;
+}
+
+.conteudo .inicio .logo {
+    height: 10em;
+    background-image: url(/img/bla-bla-bla.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.conteudo .inicio p {
+    text-align: center;
+    margin: 1em 10%;
+}

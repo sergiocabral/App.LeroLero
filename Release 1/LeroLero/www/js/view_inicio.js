@@ -1,4 +1,5 @@
 ﻿var $scope = Site.Angular.ConteudoControllerScope;
 
-$scope.quem = "entrada ...";
-$scope.inc = "css/global.css";
+$scope.comecar = function () {
+    Site.Comportamento.Alerta("Ops! Ainda em desenvolvimento.");
+}

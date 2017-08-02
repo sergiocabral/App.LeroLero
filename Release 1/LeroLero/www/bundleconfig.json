@@ -286,5 +286,11 @@
     "inputFiles": [
       "plugins/angular/angular-touch.js"
     ]
+  },
+  {
+    "outputFileName": "css/fonts.min.css",
+    "inputFiles": [
+      "css/fonts.css"
+    ]
   }
 ]

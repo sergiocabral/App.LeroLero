@@ -179,4 +179,18 @@ window.Comportamento = function (site) {
         return cor;
     }
 
+    _this.AbrirUrl = function (url) {
+        /// <summary>
+        /// Abre um link sem sair do aplicativo.
+        /// </summary>
+        /// <param name="url" type="string">Endereço urk</param>
+
+        if (_this.Site.Cordova.Ativo()) {
+            _this.Site.Cordova.AbrirLinkExternamente(url);
+        }
+        else {
+            window.open(url);
+        }
+    }
+
 };

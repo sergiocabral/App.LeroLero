@@ -14,9 +14,39 @@
     }
 }
 
-/* Zera todas as margens. */
+/* Reset para todos os elementos. */
 * {
     margin: 0;
+    font-family: 'Acme';
+}
+
+/* Reset para cabeçalhos. */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bowlby One SC';
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+h4 {
+    font-size: 1.6em;
+}
+
+h5 {
+    font-size: 1.3em;
+}
+
+h6 {
+    font-size: 1em;
 }
 
 /* Animação Angular: ENTRADA do elemento. */
@@ -34,6 +64,11 @@
 /* Base da tela. */
 body {
     background-color: black;
+}
+
+/* Tudo no menu. */
+.menu *:not(md-icon) {
+    font-family: 'Fredoka One';
 }
 
 /* Menu: barra superior sempre fixa. */
@@ -84,8 +119,9 @@ md-toolbar {
     position: fixed;
     bottom: 0;
     top: 64px;
-    padding: 1em 1em 1em 1em;
+    padding: 1em 1em 1em 0;
     width: 100%;
+    overflow: auto;
 }
 @media (max-width: 959px) and (min-width: 0) and (orientation: landscape) {
     .conteudo {

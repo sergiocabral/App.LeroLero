@@ -179,6 +179,9 @@ window.Angular = function (site) {
         }
     };
 
+    //Último nome de conteudo carregado.
+    _this._ultimoConteudo = "";
+
     _this.ConteudoRoutes = function ($routeProvider) {
         /// <summary>
         /// Configura as rotas para o conteúdo.
@@ -208,8 +211,15 @@ window.Angular = function (site) {
                             $http.get(arquivoJs)
                                     .then(function (response) {
                                         _this.Historico.push($location.$$absUrl);
+
                                         _this.ConteudoControllerScope = $scope;
+
                                         $(".conteudo.ng-enter").css("background", "linear-gradient(white," + _this.Site.Comportamento.CorDeFundoAleatoria() + " 80%)");
+
+                                        $(".conteudo").removeClass(_this._ultimoConteudo);
+                                        $(".conteudo").addClass(nome);
+                                        _this._ultimoConteudo = nome;
+                                        
                                         eval(response.data);
                                     });
                         });

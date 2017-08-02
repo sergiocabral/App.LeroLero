@@ -95,4 +95,18 @@ window.Cordova = function (site) {
         navigator.app.exitApp();
     }
 
+    _this.AbrirLinkExternamente = function (url, dados) {
+        /// <summary>
+        /// Abre um link no navegador do telefone, ao invés de no aplicativo.
+        /// </summary>
+        /// <param name="url" type="string">Endereço urk</param>
+        /// <param name="dados" type="json">Parâmetros.</param>
+
+        dados = $.extend({
+            openExternal: true //Indica que o link deve ser aberto pelo navegador do telelfone
+        }, dados);
+
+        navigator.app.loadUrl(url, dados);
+    }
+
 };

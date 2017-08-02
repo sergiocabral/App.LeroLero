@@ -119,6 +119,7 @@ carregarArquivo([
 
     //Estilos globais para todo o aplicativo.
     "css/global.css",
+    "css/fonts.css",
 
     //Classes do sistema.
     "js/class_Site.js",
