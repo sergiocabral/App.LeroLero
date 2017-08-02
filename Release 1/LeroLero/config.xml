@@ -19,8 +19,6 @@
 <preference name="phonegap-version" value="cli-6.2.0" />
 <preference name="xwalkMultipleApk" value="false" />
 <plugin name="cordova-plugin-crosswalk-webview"/>
-<plugin name="cordova-plugin-statusbar" spec="2.1.3"/>
-<plugin name="cordova-plugin-device" spec="1.1.2"/>
 <plugin name="cordova-plugin-whitelist" spec="1.2.2"/>
 <platform  name="ios">
     <!-- below requires the splash screen plugin -->
@@ -41,6 +39,7 @@
     <!-- below requires the splash screen plugin -->
     <!-- docs: https://github.com/apache/cordova-plugin-splashscreen -->
     <preference name="SplashMaintainAspectRatio" value="false"/>
+    <preference name="SplashScreenDelay" value="0"/>
 </platform>
 <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect --ignore-gpu-blacklist "/>
 <platform name="android" >

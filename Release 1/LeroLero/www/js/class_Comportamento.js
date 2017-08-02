@@ -47,7 +47,8 @@ window.Comportamento = function (site) {
             _this._backup_html_style = $("html").attr("style");
             _this._backup_body_style = $("body").attr("style");
 
-            $(document).ready(function () { setTimeout(function () { fSplash(modo); }, 1000); });
+            var timeout = _this.Site.Cordova.Ativo() ? 3000 : 1000;
+            $(document).ready(function () { setTimeout(function () { fSplash(modo); }, timeout); });
         }
         else {
             fSplash(modo);
