@@ -75,9 +75,9 @@ window.Comportamento = function (site) {
         /// <param name="config" type="json">Parâmetros</param>
 
         _this.Site.Angular.ExibirDialogo("alertar", $.extend(config || {}, {
-            text: texto ? texto : "Ops...",
-            title: titulo ? titulo : "",
-            ok: botao ? botao : "Fechar"
+            text: texto,
+            title: titulo,
+            ok: botao
         }));
     }
 
@@ -94,12 +94,12 @@ window.Comportamento = function (site) {
         /// <param name="config" type="json">Parâmetros</param>
 
         _this.Site.Angular.ExibirDialogo("confirmar", $.extend(config || {}, {
-            text: texto ? texto : "O quê?",
-            title: titulo ? titulo : "",
-            then1: funcaoSim ? funcaoSim : null,
-            then2: funcaoNao ? funcaoNao : null,
-            ok: botaoSim ? botaoSim : "Sim",
-            cancel: botaoNao ? botaoNao : "Não"
+            text: texto,
+            title: titulo,
+            then1: funcaoSim,
+            then2: funcaoNao,
+            ok: botaoSim,
+            cancel: botaoNao
         }));
     }
 

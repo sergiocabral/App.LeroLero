@@ -85,34 +85,38 @@ window.Angular = function (site) {
 
                 switch (tipo) {
                     case "alertar":
-                        dialogo.show(dialogo.alert($.extend(config, {
+                        config = $.extend(config, {
                             parent: angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')),
                             openFrom: config.openFrom != undefined ? config.openFrom : '.menu',
                             closeTo: config.closeTo != undefined ? config.closeTo : 'body',
                             targetEvent: config.ev != undefined ? config.ev : undefined,
                             clickOutsideToClose: config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true,
-                            ariaLabel: config.ariaLabel != undefined ? config.ariaLabel : 'alerta',
-                            title: config.title != undefined ? config.title : 'title',
-                            textContent: config.text != undefined ? config.text : 'text',
-                            ok: config.ok != undefined ? config.ok : 'ok'
-                        }))).then(
+                            ariaLabel: config.ariaLabel != undefined ? config.ariaLabel : 'Altera ao usuário',
+                            title: config.title != undefined ? config.title : '',
+                            textContent: config.text != undefined ? config.text : 'Ops...',
+                            ok: config.ok != undefined ? config.ok : 'Fechar'
+                        });
+                        config = dialogo.alert(config);
+                        dialogo.show(config).then(
                             config.then1 != undefined ? config.then1 : fNulo,
                             config.then2 != undefined ? config.then2 : fNulo
                         );
                         break;
                     case "confirmar":
-                        dialogo.show(dialogo.confirm($.extend(config, {
+                        config = $.extend(config, {
                             parent: angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')),
                             openFrom: config.openFrom != undefined ? config.openFrom : '.menu',
                             closeTo: config.closeTo != undefined ? config.closeTo : 'body',
                             targetEvent: config.ev != undefined ? config.ev : undefined,
                             clickOutsideToClose: config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true,
-                            ariaLabel: config.ariaLabel != undefined ? config.ariaLabel : 'alerta',
-                            title: config.title != undefined ? config.title : 'title',
-                            textContent: config.text != undefined ? config.text : 'text',
-                            ok: config.ok != undefined ? config.ok : 'S',
-                            cancel: config.cancel != undefined ? config.cancel : 'N'
-                    }))).then(
+                            ariaLabel: config.ariaLabel != undefined ? config.ariaLabel : 'Esperando confirmação do usuário',
+                            title: config.title != undefined ? config.title : '',
+                            textContent: config.text != undefined ? config.text : 'O quê?',
+                            ok: config.ok != undefined ? config.ok : 'Sim',
+                            cancel: config.cancel != undefined ? config.cancel : 'Não'
+                        });
+                        config = dialogo.confirm(config);
+                        dialogo.show(config).then(
                             config.then1 != undefined ? config.then1 : fNulo,
                             config.then2 != undefined ? config.then2 : fNulo
                         );
@@ -120,7 +124,7 @@ window.Angular = function (site) {
                     default:
                         return false;
                 }
-
+                window._config = config;
                 return true;
             }
         }
