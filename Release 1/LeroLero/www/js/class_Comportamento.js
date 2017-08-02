@@ -166,11 +166,10 @@ window.Comportamento = function (site) {
         /// </summary>
 
         var cores = [
-            '#0AC2D2',
-            '#60D7A9',
-            '#FDC162',
-            '#FD6A62',
-            '#7BB7FA'];
+            '#CCFFCC',
+            '#FFFFCC',
+            '#CBE5FF',
+            '#FFDBDB'];
 
         if (_this._ultimaCorDeFundoAleatoria) { cores.splice(cores.indexOf(_this._ultimaCorDeFundoAleatoria), 1); }
         var cor = cores[_this.Site.Util.NumeroAleatorio(cores.length - 1)];

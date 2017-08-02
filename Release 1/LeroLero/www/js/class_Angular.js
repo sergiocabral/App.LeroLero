@@ -209,7 +209,7 @@ window.Angular = function (site) {
                                     .then(function (response) {
                                         _this.Historico.push($location.$$absUrl);
                                         _this.ConteudoControllerScope = $scope;
-                                        $(".conteudo.ng-enter").css("background", "linear-gradient(white," + _this.Site.Comportamento.CorDeFundoAleatoria() + ")");
+                                        $(".conteudo.ng-enter").css("background", "linear-gradient(white," + _this.Site.Comportamento.CorDeFundoAleatoria() + " 80%)");
                                         eval(response.data);
                                     });
                         });
