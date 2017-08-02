@@ -1,7 +1,7 @@
 ﻿/* Animação de transição: ENTRADA da tela. */
 @keyframes entrada {
     from {
-        transform: translateX(100%);
+        transform: translateX(100%) scale(.95);
     }
     to {
         transform: translateY(0);
@@ -53,13 +53,26 @@ body {
     margin: 0 0.5em 0 0.5em;
 }
 
+md-toolbar {
+    height: 64px;
+    min-height: 64px;
+    max-height: 64px;
+}
+@media (max-width: 959px) and (min-width: 0) and (orientation: landscape) {
+    md-toolbar {
+        height: 48px;
+        min-height: 48px;
+        max-height: 48px;
+    }
+}
+
 /* Menu lateral. Para ficar abaixo da barra fixa. */
 .menu md-sidenav {
-    padding-top: 4em;
+    padding-top: 64px;
 }
 @media (max-width: 959px) and (min-width: 0) and (orientation: landscape) {
     .menu md-sidenav {
-        padding-top: 3em;
+        padding-top: 48px;
     }
 }
 
@@ -69,12 +82,12 @@ body {
     background: linear-gradient(#ffffff, #FFF2C9);
     position: fixed;
     bottom: 0;
-    top: 0;
-    padding: 5em 1em 1em 1em;
+    top: 64px;
+    padding: 1em 1em 1em 1em;
     width: 100%;
 }
 @media (max-width: 959px) and (min-width: 0) and (orientation: landscape) {
     .conteudo {
-        padding-top: 4em;
+        top: 48px;
     }
 }

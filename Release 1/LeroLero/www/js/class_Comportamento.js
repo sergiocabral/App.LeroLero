@@ -159,4 +159,25 @@ window.Comportamento = function (site) {
         _this.Confirma("Fechar aplicativo?", undefined, fFechar);
     }
 
+    _this._ultimaCorDeFundoAleatoria = "";
+    _this.CorDeFundoAleatoria = function () {
+        /// <summary>
+        /// Retorna uma cor para fndo aleatória.
+        /// </summary>
+
+        var cores = [
+            '#0AC2D2',
+            '#60D7A9',
+            '#FDC162',
+            '#FD6A62',
+            '#7BB7FA'];
+
+        if (_this._ultimaCorDeFundoAleatoria) { cores.splice(cores.indexOf(_this._ultimaCorDeFundoAleatoria), 1); }
+        var cor = cores[_this.Site.Util.NumeroAleatorio(cores.length - 1)];
+        if (_this._ultimaCorDeFundoAleatoria) { cores.push(_this._ultimaCorDeFundoAleatoria); }
+        _this._ultimaCorDeFundoAleatoria = cor;
+
+        return cor;
+    }
+
 };

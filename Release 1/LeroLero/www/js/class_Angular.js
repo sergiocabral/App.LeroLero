@@ -35,6 +35,9 @@ window.Angular = function (site) {
 
     //Função para exibir uma caixa de diálogo.
     _this.ExibirDialogo = function () { };
+
+    //Histórico de páginas visitadas.
+    _this.Historico = [];
     
     _this.Inicializar = function () {
         /// <summary>
@@ -96,8 +99,7 @@ window.Angular = function (site) {
                             textContent: config.text != undefined ? config.text : 'Ops...',
                             ok: config.ok != undefined ? config.ok : 'Fechar'
                         });
-                        config = dialogo.alert(config);
-                        dialogo.show(config).then(
+                        dialogo.show(dialogo.alert(config)).then(
                             config.then1 != undefined ? config.then1 : fNulo,
                             config.then2 != undefined ? config.then2 : fNulo
                         );
@@ -115,8 +117,7 @@ window.Angular = function (site) {
                             ok: config.ok != undefined ? config.ok : 'Sim',
                             cancel: config.cancel != undefined ? config.cancel : 'Não'
                         });
-                        config = dialogo.confirm(config);
-                        dialogo.show(config).then(
+                        dialogo.show(dialogo.confirm(config)).then(
                             config.then1 != undefined ? config.then1 : fNulo,
                             config.then2 != undefined ? config.then2 : fNulo
                         );
@@ -206,7 +207,9 @@ window.Angular = function (site) {
                         $timeout(function () {
                             $http.get(arquivoJs)
                                     .then(function (response) {
+                                        _this.Historico.push($location.$$absUrl);
                                         _this.ConteudoControllerScope = $scope;
+                                        $(".conteudo.ng-enter").css("background", "linear-gradient(white," + _this.Site.Comportamento.CorDeFundoAleatoria() + ")");
                                         eval(response.data);
                                     });
                         });

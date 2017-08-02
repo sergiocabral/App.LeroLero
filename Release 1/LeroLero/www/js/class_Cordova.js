@@ -44,7 +44,13 @@ window.Cordova = function (site) {
         /// <param name="e" type="event">Dados do evento.</param>
         /// <returns type="boolean">Quando ==false interrompe o evento.</returns>
 
-        _this.Site.Comportamento.MenuLateral(!_this.Site.Comportamento.MenuLateral());
+        if (Site.Angular.Historico.length > 1) {
+            _this.Site.Angular.Historico.pop();
+            document.location.href = _this.Site.Angular.Historico.pop();
+        }
+        else {
+            _this.Site.Comportamento.FecharAplicativo();
+        }
 
         if (e) { e.preventDefault(); }
         return false;

@@ -130,4 +130,17 @@ window.Util = function (site) {
         return result;
     }
 
+    _this.NumeroAleatorio = function (max, min) {
+        /// <summary>
+        /// Retorna um número aleatorio.
+        /// </summary>
+        /// <param name="max" type="int">Valor máximo</param>
+        /// <param name="min" type="inte">Valor mínimo</param>
+        /// <returns type="int">Valor numérico aleatorio</returns>
+
+        max = max !== undefined ? max + 1 : 10;
+        min = min !== undefined ? min : 0;
+        return parseInt(Math.random() * (max - min) + min);
+    }
+
 };
