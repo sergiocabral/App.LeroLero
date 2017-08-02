@@ -15,6 +15,11 @@
     }
 }
 
+/* Zera todas as margens. */
+* {
+    margin: 0;
+}
+
 /* Animação Angular: ENTRADA do elemento. */
 .conteudo.ng-enter {
     animation: entrada 0.5s both ease-in;
@@ -64,7 +69,11 @@ body {
     position: fixed;
     bottom: 0;
     top: 0;
-    text-align: center;
-    padding-top: 200px;
+    padding: 5em 1em;
     width: 100%;
+}
+@media (max-width: 959px) and (min-width: 0) and (orientation: landscape) {
+    .conteudo {
+        padding-top: 4em;
+    }
 }
