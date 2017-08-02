@@ -36,31 +36,65 @@ window.Angular = function (site) {
 
         _this.ConteudoModule = angular
             .module('conteudo-module', ['ngRoute', 'ngAnimate', 'ngMaterial'])
-            .config(['$routeProvider', _this.RoutesConteudo]);
+            .config(['$routeProvider', _this.ConteudoRoutes]);
 
         _this.MenuModule = angular
             .module('menu-module', ['ngMaterial'])
-            .controller('menu-controller', ['$scope', '$mdSidenav', _this.ControllerMenu]);
+            .config(['$mdThemingProvider', _this.MenuTheming])
+            .controller('menu-controller', ['$scope', '$mdSidenav', '$location', '$mdColors', _this.MenuController]);
 
         angular.bootstrap(angular.element('.tela'), ['menu-module', 'conteudo-module']);
-    }
+    };
 
-    _this.ControllerMenu = function ($scope, $mdSidenav) {
+    _this.MenuTheming = function ($mdThemingProvider) {
+        /// <summary>
+        /// Configuração do tema do menu.
+        /// </summary>
+        /// <param name="$mdThemingProvider" type="object">Provider de tema</param>
+
+        $mdThemingProvider
+            .theme('default')
+            .primaryPalette('amber')
+            .accentPalette('deep-orange')
+            .warnPalette('red');
+    };
+
+    _this.MenuController = function ($scope, $mdSidenav, $location, $mdColors) {
         /// <summary>
         /// Controller do menu principal
         /// </summary>
         /// <param name="$scope" type="object">Escopo do controller.</param>
         /// <param name="$mdSidenav" type="object">Provider do menu.</param>
 
-        $scope.menu = function () { $mdSidenav('menu-principal').toggle(); };
-    }
+        $scope.menuAtivo = function (path) {
+            return path && $location.path().substr(0, path.length) === path;
+        }
+        
+        $scope.menu = function (path) {
+            if ($scope.menuAtivo(path)) { return; }
+            var menu = $mdSidenav('menu-principal');
+            if (menu.isOpen()) {
+                setTimeout(function () { menu.toggle(); }, 100);
+            } else {
+                menu.toggle();
+            }
+        };
+        
+        $scope.backgroundColor = function (path) {
+            return $scope.menuAtivo(path) ? $mdColors.getThemeColor('default-primary-200') : 'auto';
+        }
 
-    _this.RoutesConteudo = function ($routeProvider) {
+        $scope.textColor = function (path) {
+            return $scope.menuAtivo(path) ? $mdColors.getThemeColor('default-primary-900') : 'auto';
+        }
+    };
+
+    _this.ConteudoRoutes = function ($routeProvider) {
         /// <summary>
         /// Configura as rotas para o conteúdo.
         /// </summary>
         /// <param name="$routeProvider" type="object">Provider</param>
-        
+
         var fWhenConfig = function (nome) {
             /// <summary>
             /// Configura os parâmetros para o método When da configuração do Route.
@@ -95,6 +129,6 @@ window.Angular = function (site) {
 			.when('/inicio', fWhenConfig("inicio"))
 			.when('/sobre', fWhenConfig("sobre"))
             .otherwise({ redirectTo: '/inicio' });
-    }
+    };
 
 };

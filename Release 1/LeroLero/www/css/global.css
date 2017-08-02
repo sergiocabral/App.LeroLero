@@ -43,6 +43,11 @@ body {
     margin: 0 0.5em 0 0;
 }
 
+/* Menu: ícone ao longo do menu. */
+.menu md-sidenav md-icon {
+    margin: 0 0.5em 0 0.5em;
+}
+
 /* Menu lateral. Para ficar abaixo da barra fixa. */
 .menu md-sidenav {
     padding-top: 3em;
@@ -50,7 +55,7 @@ body {
 
 /* Base do conteúdo. */
 .conteudo {
-    background-color: white;
+    background-color: #FFFEF7;
     position: fixed;
     bottom: 0;
     top: 0;
