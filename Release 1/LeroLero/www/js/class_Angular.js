@@ -85,34 +85,34 @@ window.Angular = function (site) {
 
                 switch (tipo) {
                     case "alertar":
-                        dialogo.show(dialogo.alert()
-                            .parent(angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')))
-                            .openFrom(config.openFrom != undefined ? config.openFrom : '.menu')
-                            .closeTo(config.closeTo != undefined ? config.closeTo : 'body')
-                            .targetEvent(config.ev != undefined ? config.ev : undefined)
-                            .clickOutsideToClose(config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true)
-                            .ariaLabel(config.ariaLabel != undefined ? config.ariaLabel : 'alerta')
-                            .title(config.title != undefined ? config.title : 'title')
-                            .textContent(config.text != undefined ? config.text : 'text')
-                            .ok(config.ok != undefined ? config.ok : 'ok')
-                        ).then(
+                        dialogo.show(dialogo.alert($.extend(config, {
+                            parent: angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')),
+                            openFrom: config.openFrom != undefined ? config.openFrom : '.menu',
+                            closeTo: config.closeTo != undefined ? config.closeTo : 'body',
+                            targetEvent: config.ev != undefined ? config.ev : undefined,
+                            clickOutsideToClose: config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true,
+                            ariaLabel: config.ariaLabel != undefined ? config.ariaLabel : 'alerta',
+                            title: config.title != undefined ? config.title : 'title',
+                            textContent: config.text != undefined ? config.text : 'text',
+                            ok: config.ok != undefined ? config.ok : 'ok'
+                        }))).then(
                             config.then1 != undefined ? config.then1 : fNulo,
                             config.then2 != undefined ? config.then2 : fNulo
                         );
                         break;
                     case "confirmar":
-                        dialogo.show(dialogo.confirm()
-                            .parent(angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')))
-                            .openFrom(config.openFrom != undefined ? config.openFrom : '.menu')
-                            .closeTo(config.closeTo != undefined ? config.closeTo : 'body')
-                            .targetEvent(config.ev != undefined ? config.ev : undefined)
-                            .clickOutsideToClose(config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true)
-                            .ariaLabel(config.ariaLabel != undefined ? config.ariaLabel : 'alerta')
-                            .title(config.title != undefined ? config.title : 'title')
-                            .textContent(config.text != undefined ? config.text : 'text')
-                            .ok(config.ok != undefined ? config.ok : 'Sim')
-                            .cancel(config.cancel != undefined ? config.cancel : 'Não')
-                        ).then(
+                        dialogo.show(dialogo.confirm($.extend(config, {
+                            parent: angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')),
+                            openFrom: config.openFrom != undefined ? config.openFrom : '.menu',
+                            closeTo: config.closeTo != undefined ? config.closeTo : 'body',
+                            targetEvent: config.ev != undefined ? config.ev : undefined,
+                            clickOutsideToClose: config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true,
+                            ariaLabel: config.ariaLabel != undefined ? config.ariaLabel : 'alerta',
+                            title: config.title != undefined ? config.title : 'title',
+                            textContent: config.text != undefined ? config.text : 'text',
+                            ok: config.ok != undefined ? config.ok : 'S',
+                            cancel: config.cancel != undefined ? config.cancel : 'N'
+                    }))).then(
                             config.then1 != undefined ? config.then1 : fNulo,
                             config.then2 != undefined ? config.then2 : fNulo
                         );
@@ -163,7 +163,6 @@ window.Angular = function (site) {
         
         $scope.fechar = function () {
             _this.Site.Comportamento.FecharAplicativo();
-            console.log("fechar");
         }
 
         $scope.backgroundColor = function (path) {

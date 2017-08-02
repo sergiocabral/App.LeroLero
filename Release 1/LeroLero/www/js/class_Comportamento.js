@@ -108,47 +108,55 @@ window.Comportamento = function (site) {
         /// Fechar aplicativo.
         /// </summary>
 
-        if (_this.Site.Cordova.Ativo()) {
-            _this.Site.Cordova.FecharAplicativo();
-            return;
-        }
+        var fFecharNavegador = function () {
+            var browserName = navigator.appName;
+            var browserVer = parseInt(navigator.appVersion);
 
-        var browserName = navigator.appName;
-        var browserVer = parseInt(navigator.appVersion);
-
-        if (browserName == "Microsoft Internet Explorer") {
-            var ie7 = (document.all && !window.opera && window.XMLHttpRequest) ? true : false;
-            if (ie7) {
-                //Para fechar sem confirmação no IE7 e versões superiores.
-                window.open('', '_parent', '');
-                window.close();
+            if (browserName == "Microsoft Internet Explorer") {
+                var ie7 = (document.all && !window.opera && window.XMLHttpRequest) ? true : false;
+                if (ie7) {
+                    //Para fechar sem confirmação no IE7 e versões superiores.
+                    window.open('', '_parent', '');
+                    window.close();
+                } else {
+                    //Para fechar sem confirmação no IE6
+                    this.focus();
+                    self.opener = this;
+                    self.close();
+                }
             } else {
-                //Para fechar sem confirmação no IE6
-                this.focus();
-                self.opener = this;
-                self.close();
+                //Para outros navegadores diferentes do IE
+                //Exceto Firefoxque não suporta auto fechamento.
+                try {
+                    this.focus();
+                    self.opener = this;
+                    self.close();
+                } catch (e) {
+
+                }
+
+                try {
+                    window.open('', '_self', '');
+                    window.close();
+                } catch (e) {
+
+                }
             }
-        } else {
-            //Para outros navegadores diferentes do IE
-            //Exceto Firefoxque não suporta auto fechamento.
-            try {
-                this.focus();
-                self.opener = this;
-                self.close();
-            } catch (e) {
 
+            //no que tudo o mais falhar, direciona para tela em branco.
+            document.location.href = "about:blank";
+        }
+
+        var fFechar = function () {
+            if (_this.Site.Cordova.Ativo()) {
+                _this.Site.Cordova.FecharAplicativo();
             }
-
-            try {
-                window.open('', '_self', '');
-                window.close();
-            } catch (e) {
-
+            else {
+                fFecharNavegador();
             }
         }
 
-        //no que tudo o mais falhar, direciona para tela em branco.
-        document.location.href = "about:blank";
+        _this.Confirma("Fechar aplicativo?", undefined, fFechar);
     }
 
 };
