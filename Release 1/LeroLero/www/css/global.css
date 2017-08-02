@@ -52,12 +52,14 @@ body {
     margin: 0 0.5em 0 0.5em;
 }
 
+.md-toolbar-tools,
 md-toolbar {
     height: 64px;
     min-height: 64px;
     max-height: 64px;
 }
 @media (max-width: 959px) and (min-width: 0) and (orientation: landscape) {
+    .md-toolbar-tools,
     md-toolbar {
         height: 48px;
         min-height: 48px;
