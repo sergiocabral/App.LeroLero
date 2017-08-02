@@ -66,6 +66,7 @@ body {
 /* Base do conteúdo. */
 .conteudo {
     background-color: #FFFEF7;
+    background: linear-gradient(#ffffff, #FFF2C9);
     position: fixed;
     bottom: 0;
     top: 0;
