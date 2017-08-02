@@ -87,6 +87,10 @@ window.Angular = function (site) {
         $scope.textColor = function (path) {
             return $scope.menuAtivo(path) ? $mdColors.getThemeColor('default-primary-900') : 'auto';
         }
+
+        $scope.onSwipe = function (ev) {
+            alert('You swiped left!!');
+        };
     };
 
     _this.ConteudoRoutes = function ($routeProvider) {

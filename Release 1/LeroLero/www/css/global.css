@@ -65,12 +65,12 @@ body {
 
 /* Base do conteúdo. */
 .conteudo {
-    background-color: #FFFEF7;
+    background-color: #ffffff;
     background: linear-gradient(#ffffff, #FFF2C9);
     position: fixed;
     bottom: 0;
     top: 0;
-    padding: 5em 1em;
+    padding: 5em 1em 1em 1em;
     width: 100%;
 }
 @media (max-width: 959px) and (min-width: 0) and (orientation: landscape) {
