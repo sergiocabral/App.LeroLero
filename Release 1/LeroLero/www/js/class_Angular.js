@@ -81,23 +81,47 @@ window.Angular = function (site) {
             _this.ExibirDialogo = function (tipo, config) {
                 config = config || {};
                 var dialogo = $mdDialog;
+                var fNulo = function () { };
 
                 switch (tipo) {
-                    case "alerta":
+                    case "alertar":
                         dialogo.show(dialogo.alert()
                             .parent(angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')))
-                            .clickOutsideToClose(config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true)
-                            .title(config.title != undefined ? config.title : 'title')
-                            .textContent(config.text != undefined ? config.text : 'text')
-                            .ariaLabel(config.ariaLabel != undefined ? config.ariaLabel : 'alerta')
-                            .ok(config.ok != undefined ? config.ok : 'ok')
                             .openFrom(config.openFrom != undefined ? config.openFrom : '.menu')
                             .closeTo(config.closeTo != undefined ? config.closeTo : 'body')
-                            .targetEvent(config.ev != undefined ? config.ev : undefined));
+                            .targetEvent(config.ev != undefined ? config.ev : undefined)
+                            .clickOutsideToClose(config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true)
+                            .ariaLabel(config.ariaLabel != undefined ? config.ariaLabel : 'alerta')
+                            .title(config.title != undefined ? config.title : 'title')
+                            .textContent(config.text != undefined ? config.text : 'text')
+                            .ok(config.ok != undefined ? config.ok : 'ok')
+                        ).then(
+                            config.then1 != undefined ? config.then1 : fNulo,
+                            config.then2 != undefined ? config.then2 : fNulo
+                        );
                         break;
+                    case "confirmar":
+                        dialogo.show(dialogo.confirm()
+                            .parent(angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')))
+                            .openFrom(config.openFrom != undefined ? config.openFrom : '.menu')
+                            .closeTo(config.closeTo != undefined ? config.closeTo : 'body')
+                            .targetEvent(config.ev != undefined ? config.ev : undefined)
+                            .clickOutsideToClose(config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true)
+                            .ariaLabel(config.ariaLabel != undefined ? config.ariaLabel : 'alerta')
+                            .title(config.title != undefined ? config.title : 'title')
+                            .textContent(config.text != undefined ? config.text : 'text')
+                            .ok(config.ok != undefined ? config.ok : 'Sim')
+                            .cancel(config.cancel != undefined ? config.cancel : 'Não')
+                        ).then(
+                            config.then1 != undefined ? config.then1 : fNulo,
+                            config.then2 != undefined ? config.then2 : fNulo
+                        );
+                        break;
+                    default:
+                        return false;
                 }
 
-                return false;
+                return true;
             }
         }
     }

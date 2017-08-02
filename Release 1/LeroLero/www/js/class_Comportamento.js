@@ -74,10 +74,32 @@ window.Comportamento = function (site) {
         /// <param name="botao" type="string">Texto do botão de fechar</param>
         /// <param name="config" type="json">Parâmetros</param>
 
-        _this.Site.Angular.ExibirDialogo("alerta", $.extend(config || {}, {
+        _this.Site.Angular.ExibirDialogo("alertar", $.extend(config || {}, {
             text: texto ? texto : "Ops...",
             title: titulo ? titulo : "",
             ok: botao ? botao : "Fechar"
+        }));
+    }
+
+    _this.Confirma = function (texto, titulo, funcaoSim, funcaoNao, botaoSim, botaoNao, config) {
+        /// <summary>
+        /// Obter comfirmação do usuário.
+        /// </summary>
+        /// <param name="texto" type="string">Mensagem</param>
+        /// <param name="titulo" type="string">Título</param>
+        /// <param name="funcaoSim" type="function">Função para botão Sim</param>
+        /// <param name="funcaoNao" type="function">Função para botão Não</param>
+        /// <param name="botaoSim" type="string">Texto do botão Sim</param>
+        /// <param name="botaoNao" type="string">Texto do botão Não</param>
+        /// <param name="config" type="json">Parâmetros</param>
+
+        _this.Site.Angular.ExibirDialogo("confirmar", $.extend(config || {}, {
+            text: texto ? texto : "O quê?",
+            title: titulo ? titulo : "",
+            then1: funcaoSim ? funcaoSim : null,
+            then2: funcaoNao ? funcaoNao : null,
+            ok: botaoSim ? botaoSim : "Sim",
+            cancel: botaoNao ? botaoNao : "Não"
         }));
     }
 
