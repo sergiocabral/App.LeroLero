@@ -25,28 +25,36 @@ window.Angular = function (site) {
 
 
     //Objetos instanciados do angular.
+    _this.TelaModule = undefined;
     _this.ConteudoModule = undefined;
     _this.ConteudoControllerScope = undefined;
-    _this.TelaModule = undefined;
+    _this.TelaDialogo = undefined;
 
     //Função para abrir ou fechar o menu lateral.
-    _this.MenuLateral = function () { };
+    _this.ExibirMenuLateral = function () { };
+
+    //Função para exibir uma caixa de diálogo.
+    _this.ExibirDialogo = function () { };
     
     _this.Inicializar = function () {
         /// <summary>
         /// Inicializa o framework AngularJS
         /// </summary>
 
-        _this.ConteudoModule = angular
-            .module('conteudo-module', ['ngRoute', 'ngAnimate', 'ngMaterial'])
-            .config(['$routeProvider', _this.ConteudoRoutes]);
-
         _this.TelaModule = angular
             .module('tela-module', ['ngMaterial'])
             .config(['$mdThemingProvider', _this.TelaTheming])
             .controller('tela-controller', ['$scope', '$mdSidenav', '$location', '$mdColors', _this.TelaController]);
 
-        angular.bootstrap(angular.element('.tela'), ['tela-module', 'conteudo-module']);
+        _this.ConteudoModule = angular
+            .module('conteudo-module', ['ngRoute', 'ngAnimate', 'ngMaterial'])
+            .config(['$routeProvider', _this.ConteudoRoutes]);
+
+        _this.DialogoModule = angular
+            .module('dialogo-module', ['ngMaterial'])
+            .controller('dialogo-controller', ['$scope', '$mdDialog', _this.DialogoController]);
+        
+        angular.bootstrap(angular.element('.tela'), ['tela-module', 'conteudo-module', 'dialogo-module']);
     };
 
     _this.TelaTheming = function ($mdThemingProvider) {
@@ -62,6 +70,38 @@ window.Angular = function (site) {
             .warnPalette('red');
     };
 
+    _this.DialogoController = function ($scope, $mdDialog) {
+        /// <summary>
+        /// Controller da caixa de dialogo.
+        /// </summary>
+        /// <param name="$scope" type="object">Escopo do controller.</param>
+        /// <param name="$mdDialog" type="object">Provider da caixa de diálogo.</param>
+
+        if (_this.ExibirDialogo() === undefined) {
+            _this.ExibirDialogo = function (tipo, config) {
+                config = config || {};
+                var dialogo = $mdDialog;
+
+                switch (tipo) {
+                    case "alerta":
+                        dialogo.show(dialogo.alert()
+                            .parent(angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')))
+                            .clickOutsideToClose(config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true)
+                            .title(config.title != undefined ? config.title : 'title')
+                            .textContent(config.text != undefined ? config.text : 'text')
+                            .ariaLabel(config.ariaLabel != undefined ? config.ariaLabel : 'alerta')
+                            .ok(config.ok != undefined ? config.ok : 'ok')
+                            .openFrom(config.openFrom != undefined ? config.openFrom : '.menu')
+                            .closeTo(config.closeTo != undefined ? config.closeTo : 'body')
+                            .targetEvent(config.ev != undefined ? config.ev : undefined));
+                        break;
+                }
+
+                return false;
+            }
+        }
+    }
+
     _this.TelaController = function ($scope, $mdSidenav, $location, $mdColors) {
         /// <summary>
         /// Controller do tela principal
@@ -69,8 +109,8 @@ window.Angular = function (site) {
         /// <param name="$scope" type="object">Escopo do controller.</param>
         /// <param name="$mdSidenav" type="object">Provider do tela.</param>
 
-        if (_this.MenuLateral() === undefined) {
-            _this.MenuLateral = function (modo) {
+        if (_this.ExibirMenuLateral() === undefined) {
+            _this.ExibirMenuLateral = function (modo) {
                 var menu = $mdSidenav('menu-principal');
                 if (modo !== undefined) {
                     if (modo) {

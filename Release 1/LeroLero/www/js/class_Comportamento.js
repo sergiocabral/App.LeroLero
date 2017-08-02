@@ -62,7 +62,23 @@ window.Comportamento = function (site) {
         /// <param name="modo" type="boolean">Exibe ou esconde menu.</param>
         /// <returns type="boolean">Resposta se menu está exibido.</returns>
 
-        return _this.Site.Angular.MenuLateral(modo);
+        return _this.Site.Angular.ExibirMenuLateral(modo);
+    }
+
+    _this.Alerta = function (texto, titulo, botao, config) {
+        /// <summary>
+        /// Mensagem de alerta
+        /// </summary>
+        /// <param name="texto" type="string">Mensagem</param>
+        /// <param name="titulo" type="string">Título</param>
+        /// <param name="botao" type="string">Texto do botão de fechar</param>
+        /// <param name="config" type="json">Parâmetros</param>
+
+        _this.Site.Angular.ExibirDialogo("alerta", $.extend(config || {}, {
+            text: texto ? texto : "Ops...",
+            title: titulo ? titulo : "",
+            ok: botao ? botao : "Fechar"
+        }));
     }
 
     _this.FecharAplicativo = function () {

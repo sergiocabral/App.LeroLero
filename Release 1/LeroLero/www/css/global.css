@@ -39,7 +39,7 @@ body {
 
 /* Menu: barra superior sempre fixa. */
 .menu .barra-fixa {
-    z-index: 100;
+    z-index: 70;
     cursor: pointer;
 }
 
