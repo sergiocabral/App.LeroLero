@@ -38,13 +38,11 @@ window.Angular = function (site) {
             .module('conteudo-module', ['ngRoute', 'ngAnimate', 'ngMaterial'])
             .config(['$routeProvider', _this.RoutesConteudo]);
 
-        angular.bootstrap(angular.element('.tela > .conteudo'), ['conteudo-module']);
-
         _this.MenuModule = angular
             .module('menu-module', ['ngMaterial'])
             .controller('menu-controller', ['$scope', '$mdSidenav', _this.ControllerMenu]);
 
-        angular.bootstrap(angular.element('.tela > .menu'), ['menu-module']);
+        angular.bootstrap(angular.element('.tela'), ['menu-module', 'conteudo-module']);
     }
 
     _this.ControllerMenu = function ($scope, $mdSidenav) {
@@ -54,10 +52,7 @@ window.Angular = function (site) {
         /// <param name="$scope" type="object">Escopo do controller.</param>
         /// <param name="$mdSidenav" type="object">Provider do menu.</param>
 
-        $scope.teste = "hahaha";
-        $scope.show = function (val) {
-            console.log(val);
-        };
+        $scope.menu = function () { $mdSidenav('menu-principal').toggle(); };
     }
 
     _this.RoutesConteudo = function ($routeProvider) {

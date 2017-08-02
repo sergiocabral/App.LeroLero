@@ -274,5 +274,11 @@
     "inputFiles": [
       "css/view_inicio.css"
     ]
+  },
+  {
+    "outputFileName": "plugins/angular_material/material-icons.min.css",
+    "inputFiles": [
+      "plugins/angular_material/material-icons.css"
+    ]
   }
 ]

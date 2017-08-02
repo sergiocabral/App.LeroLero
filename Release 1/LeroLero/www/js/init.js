@@ -114,6 +114,7 @@ carregarArquivo([
     //Framework: Angular Material
     "plugins/angular_material/angular-material.css",
     "plugins/angular_material/angular-material.js",
+    "plugins/angular_material/material-icons.css",    
 
     //Estilos globais para todo o aplicativo.
     "css/global.css",

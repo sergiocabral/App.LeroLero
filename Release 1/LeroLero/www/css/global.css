@@ -1,10 +1,10 @@
 ﻿/* Animação de transição: ENTRADA da tela. */
 @keyframes entrada {
     from {
-        transform: translateY(100%);
+        transform: translateX(100%);
     }
     to {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
@@ -16,20 +16,36 @@
 }
 
 /* Animação Angular: ENTRADA do elemento. */
-.ng-enter {
+.conteudo.ng-enter {
     animation: entrada 0.5s both ease-in;
-    z-index: 102;
+    z-index: 2;
 }
 
 /* Animação Angular: SAÍDA do elemento. */
-.ng-leave {
+.conteudo.ng-leave {
     animation: saida 0.5s both ease-in;
-    z-index: 101;
+    z-index: 1;
 }
 
 /* Base da tela. */
 body {
     background-color: black;
+}
+
+/* Menu: barra superior sempre fixa. */
+.menu .barra-fixa {
+    z-index: 100;
+    cursor: pointer;
+}
+
+/* Menu: ícone da barra fixa. */
+.menu .barra-fixa md-icon {
+    margin: 0 0.5em 0 0;
+}
+
+/* Menu lateral. Para ficar abaixo da barra fixa. */
+.menu md-sidenav {
+    padding-top: 3em;
 }
 
 /* Base do conteúdo. */

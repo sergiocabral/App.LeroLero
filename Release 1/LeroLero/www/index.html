@@ -17,30 +17,35 @@
         <script src="cordova.js"></script>
 
     </head>
-    <body style="display: none;">
-        
-        <div class="tela">
+<body style="display: none;">
 
-            <div class="menu">
-                <md-sidenav>
-                    <md-toolbar class="md-theme-indigo" layout="row">
-                        <h1 class="md-toolbar-tools">Sidenav Left</h1>
-                        <span flex></span>
-                        <md-button ng-click="close()">Close {{teste}}</md-button>
-                    </md-toolbar>
-                    <md-content layout-padding="" layout="column" layout-align="start start">
-                        <md-button ng-click="show('home')" class="md-primary">Show Home</md-button>
-                        <md-button ng-click="show('work')" class="md-primary">Show Work</md-button>
-                    </md-content>
-                </md-sidenav>
-                <md-button ng-click="show('hahaha')" class="md-primary">Show Work</md-button>
-            </div>
+    <div class="tela">
 
-            <div class="conteudo" ng-view></div>
+        <div class="conteudo" ng-view></div>
 
-        </div>        
+        <div class="menu" ng-controller="menu-controller">
 
-        <script src="js/init.min.js"></script>
+            <md-toolbar class="barra-fixa">
+                <h1 class="md-toolbar-tools" ng-click="menu()">
+                    <md-icon> menu </md-icon>
+                    <span>Gerador de Lero Lero</span>
+                </h1>
+            </md-toolbar>
 
-    </body>
+            <md-sidenav class="md-sidenav-left" md-component-id="menu-principal" md-whiteframe="4">
+
+                <md-content layout-margin>
+                    <md-button layout="layout-fill" class="md-primary" ng-click="menu()" ng-href="#!/inicio">Início</md-button>
+                    <md-button layout="layout-fill" ng-click="menu()" ng-href="#!/sobre">Sobre</md-button>
+                </md-content>
+
+            </md-sidenav>
+
+        </div>
+
+    </div>
+
+    <script src="js/init.js"></script>
+
+</body>
 </html>
