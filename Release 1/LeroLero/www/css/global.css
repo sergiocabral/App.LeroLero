@@ -1,17 +1,16 @@
 ﻿/* Animação de transição: ENTRADA da tela. */
 @keyframes entrada {
     from {
-        transform: translateX(100%) scale(.95);
-    }
-    to {
-        transform: translateY(0);
+        transform: translateX(100%);
+        opacity: 0.5; 
     }
 }
 
 /* Animação de transição: SAÍDA da tela. */
 @keyframes saida {
     to {
-        opacity: 0; 
+        transform: translateX(-100%);
+        opacity: 0.5; 
     }
 }
 
