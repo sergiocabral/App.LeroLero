@@ -37,6 +37,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Bowlby One SC';
 }
 
+/* Emoji */
+.emoji {
+   height: 1em; /*edit for height*/
+   margin: 0 .05em 0 .1em;
+   vertical-align: -0.1em;
+}
+
 /* Reset para H1 */
 h1 {
     font-size: 200%;

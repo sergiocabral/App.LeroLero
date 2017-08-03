@@ -232,6 +232,8 @@ window.Angular = function (site) {
                                         _this._ultimoConteudo = nome;
                                         
                                         eval(response.data);
+
+                                        emoji();
                                     });
                         });
                     }]

@@ -292,5 +292,11 @@
     "inputFiles": [
       "css/fonts.css"
     ]
+  },
+  {
+    "outputFileName": "plugins/emoji/emoji.min.js",
+    "inputFiles": [
+      "plugins/emoji/emoji.js"
+    ]
   }
 ]

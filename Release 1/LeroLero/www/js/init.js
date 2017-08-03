@@ -115,7 +115,10 @@ carregarArquivo([
     //Framework: Angular Material
     "plugins/angular_material/angular-material.css",
     "plugins/angular_material/angular-material.js",
-    "plugins/angular_material/material-icons.css",    
+    "plugins/angular_material/material-icons.css",
+
+    //Framework: emoji
+    "plugins/emoji/emoji.js",
 
     //Estilos globais para todo o aplicativo.
     "css/global.css",
