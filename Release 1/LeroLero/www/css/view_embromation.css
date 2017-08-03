@@ -18,8 +18,12 @@
     top: 2px;
 }
 
+.conteudo .embromation .final p > span {
+    opacity: 0;
+}
+
 .conteudo .embromation .final .md-button {
-    margin-top: 1.5em;
+    margin-top: 2.3em;
 }
 
 .conteudo .embromation sub {

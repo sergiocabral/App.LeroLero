@@ -56,14 +56,14 @@ $scope.frases = [
 
 $scope.grupo = parseInt($location.hash());
 $scope.grupo = (isNaN($scope.grupo) ? 1 : $scope.grupo) - 1;
-$rootScope.partesSelecionadas = ($rootScope.partesSelecionadas || []).slice(0, $scope.grupo);
+$rootScope.partesSelecionadas = $rootScope.partesSelecionadas || [];
 
 $scope.fraseVisibility = $scope.grupo == 0 ? 'hidden' : 'visible';
 $scope.finalDisplay = $scope.grupo == 4 ? 'block' : 'none';
 
 $scope.fraseAtual = function (e) {
     var frase = "";
-    for (var i = 0; i < $rootScope.partesSelecionadas.length; i++) {
+    for (var i = 0; i < $scope.grupo; i++) {
         frase += " " + $scope.frases[i][$rootScope.partesSelecionadas[i]];
     }
     return frase.trim();
@@ -81,7 +81,7 @@ $scope.partes = function () {
 }
 
 $scope.selecionar = function (index) {
-    $rootScope.partesSelecionadas.push(index);
+    $rootScope.partesSelecionadas[$scope.grupo] = index;
     $window.location.href = "#!/embromation#" + ($scope.grupo + 2);
 }
 
@@ -94,5 +94,6 @@ $scope.copiar = function () {
         .focus();
     document.execCommand("copy");
     $(".conteudo input.clipboard").remove();
-    Site.Comportamento.Toast("Copiado para área de transferência");
+    $(".conteudo .final p > span").animate({ "opacity": "1" });
+    setTimeout(function () { $(".conteudo .final p > span").animate({ "opacity": "0" }); }, 2000);
 }

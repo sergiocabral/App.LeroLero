@@ -3,7 +3,7 @@
     <p>
         Você escolhe qualquer um dos trechos abaixo
         e no final monta uma frase cheia de sentido
-        mas sem nenhum significado. <emoji>poo</emoji><br/>
+        mas sem nenhum significado. <emoji>poo</emoji><br />
         <sub>Vai clicando e no final você vai entender...</sub>
     </p>
     <md-button class="md-primary md-raised md-button frase" ng-click="copiar()" style="visibility: {{fraseVisibility}}">{{fraseAtual()}}</md-button>
@@ -11,8 +11,11 @@
         <md-button class="md-accent md-raised large" ng-repeat="parte in partes()" ng-click="selecionar($index)">{{parte}}</md-button>
     </div>
     <div class="final" style="display: {{finalDisplay}}">
-        <p><emoji>boxpointup</emoji> &nbsp; clique para copiar &nbsp; <emoji>boxpointup</emoji><p>
+        <p>
+            <emoji>boxpointup</emoji> &nbsp; clique para copiar &nbsp; <emoji>boxpointup</emoji>
+            <span><br/>copiado para área de transferência</span>
+        </p>
         <md-button class="md-raised md-accent large" ng-href="#!/embromation">Voltar</md-button>
     </div>
-    
+
 </div>

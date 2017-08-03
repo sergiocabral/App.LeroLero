@@ -96,6 +96,7 @@ window.Angular = function (site) {
 
                     switch (tipo) {
                         case "toast":
+                            //VERIFICAR: Toast com problemas. Impede o funcionamento do menu lateral.
                             $mdToast.show(
                                 $mdToast.simple()
                                 .textContent(config.text != undefined ? config.text : 'Ops toast...')
@@ -177,12 +178,12 @@ window.Angular = function (site) {
         }
         
         $scope.menu = function (path) {
-            if ($scope.menuAtivo(path)) { return; }
+            if ($scope.menuAtivo(path) && $location.hash() == "") { return; }
             var menu = $mdSidenav('menu-principal');
             if (menu.isOpen()) {
-                setTimeout(function () { menu.toggle(); }, 100);
+                setTimeout(function () { menu.close(); }, 100);
             } else {
-                menu.toggle();
+                menu.open();
             }
         };
         
