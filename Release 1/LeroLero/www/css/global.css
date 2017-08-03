@@ -70,13 +70,13 @@ h6 {
 
 /* Animação Angular: ENTRADA do elemento. */
 .conteudo.ng-enter {
-    animation: entrada 0.5s both ease-in;
+    animation: entrada 0.5s both ease-in-out;
     z-index: 2;
 }
 
 /* Animação Angular: SAÍDA do elemento. */
 .conteudo.ng-leave {
-    animation: saida 0.5s both ease-in;
+    animation: saida 0.5s both ease-in-out;
     z-index: 1;
 }
 
