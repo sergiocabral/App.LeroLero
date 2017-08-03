@@ -58,6 +58,7 @@ $scope.grupo = parseInt($location.hash());
 $scope.grupo = (isNaN($scope.grupo) ? 1 : $scope.grupo) - 1;
 $rootScope.partesSelecionadas = $rootScope.partesSelecionadas || [];
 
+$scope.infoDisplay = $scope.grupo != 0 ? 'none' : 'block';
 $scope.infoVisibility = $scope.grupo != 0 ? 'hidden' : 'visible';
 $scope.fraseClass = $scope.grupo == 4 ? 'md-raised' : '';
 $scope.fraseVisibility = $scope.grupo == 0 ? 'hidden' : 'visible';
@@ -98,4 +99,11 @@ $scope.copiar = function () {
     $(".conteudo input.clipboard").remove();
     $(".conteudo .final p > span").animate({ "opacity": "1" });
     setTimeout(function () { $(".conteudo .final p > span").animate({ "opacity": "0" }); }, 2000);
+}
+
+$scope.randomico = function () {
+    for (var i = 0; i < $scope.frases.length; i++) {
+        $rootScope.partesSelecionadas[i] = Site.Util.NumeroAleatorio($scope.frases[i].length - 1);
+    }
+    $window.location.href = "#!/embromation#5";
 }
