@@ -103,7 +103,7 @@ body {
 
 /* Menu: ícone ao longo do menu. */
 .menu md-sidenav md-icon {
-    margin: 0 0.5em 0 0.5em;
+    margin: 0 0.5em 0 0;
 }
 
 .md-toolbar-tools,

@@ -82,52 +82,59 @@ window.Angular = function (site) {
 
         if (_this.ExibirDialogo() === undefined) {
             _this.ExibirDialogo = function (tipo, config) {
-                window._a = $mdDialog;
                 config = config || {};
                 var dialogo = $mdDialog;
-                var fNulo = function () { };
 
-                switch (tipo) {
-                    case "alertar":
-                        config = $.extend(config, {
-                            parent: angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')),
-                            openFrom: config.openFrom != undefined ? config.openFrom : '.menu',
-                            closeTo: config.closeTo != undefined ? config.closeTo : 'body',
-                            targetEvent: config.ev != undefined ? config.ev : undefined,
-                            clickOutsideToClose: config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true,
-                            ariaLabel: config.ariaLabel != undefined ? config.ariaLabel : 'Altera ao usuário',
-                            title: config.title != undefined ? config.title : '',
-                            textContent: config.text != undefined ? config.text : 'Ops...',
-                            ok: config.ok != undefined ? config.ok : 'Fechar'
-                        });
-                        dialogo.show(dialogo.alert(config)).then(
-                            config.then1 != undefined ? config.then1 : fNulo,
-                            config.then2 != undefined ? config.then2 : fNulo
-                        );
-                        break;
-                    case "confirmar":
-                        config = $.extend(config, {
-                            parent: angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')),
-                            openFrom: config.openFrom != undefined ? config.openFrom : '.menu',
-                            closeTo: config.closeTo != undefined ? config.closeTo : 'body',
-                            targetEvent: config.ev != undefined ? config.ev : undefined,
-                            clickOutsideToClose: config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true,
-                            ariaLabel: config.ariaLabel != undefined ? config.ariaLabel : 'Esperando confirmação do usuário',
-                            title: config.title != undefined ? config.title : '',
-                            textContent: config.text != undefined ? config.text : 'O quê?',
-                            ok: config.ok != undefined ? config.ok : 'Sim',
-                            cancel: config.cancel != undefined ? config.cancel : 'Não'
-                        });
-                        dialogo.show(dialogo.confirm(config)).then(
-                            config.then1 != undefined ? config.then1 : fNulo,
-                            config.then2 != undefined ? config.then2 : fNulo
-                        );
-                        break;
-                    default:
-                        return false;
+                if ($scope.dialogOpen) {
+                    $scope.dialogOpen = false;
+                    dialogo.cancel();
+                    return false;
                 }
-                window._config = config;
-                return true;
+                else {
+                    var fNulo = function () { };
+
+                    switch (tipo) {
+                        case "alertar":
+                            config = $.extend(config, {
+                                parent: angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')),
+                                openFrom: config.openFrom != undefined ? config.openFrom : '.menu',
+                                closeTo: config.closeTo != undefined ? config.closeTo : 'body',
+                                targetEvent: config.ev != undefined ? config.ev : undefined,
+                                clickOutsideToClose: config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true,
+                                ariaLabel: config.ariaLabel != undefined ? config.ariaLabel : 'Altera ao usuário',
+                                title: config.title != undefined ? config.title : '',
+                                textContent: config.text != undefined ? config.text : 'Ops...',
+                                ok: config.ok != undefined ? config.ok : 'Fechar'
+                            });
+                            dialogo.show(dialogo.alert(config)).then(
+                                config.then1 != undefined ? config.then1 : fNulo,
+                                config.then2 != undefined ? config.then2 : fNulo
+                            );
+                            break;
+                        case "confirmar":
+                            config = $.extend(config, {
+                                parent: angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')),
+                                openFrom: config.openFrom != undefined ? config.openFrom : '.menu',
+                                closeTo: config.closeTo != undefined ? config.closeTo : 'body',
+                                targetEvent: config.ev != undefined ? config.ev : undefined,
+                                clickOutsideToClose: config.clickOutsideToClose != undefined ? config.clickOutsideToClose : true,
+                                ariaLabel: config.ariaLabel != undefined ? config.ariaLabel : 'Esperando confirmação do usuário',
+                                title: config.title != undefined ? config.title : '',
+                                textContent: config.text != undefined ? config.text : 'O quê?',
+                                ok: config.ok != undefined ? config.ok : 'Sim',
+                                cancel: config.cancel != undefined ? config.cancel : 'Não'
+                            });
+                            dialogo.show(dialogo.confirm(config)).then(
+                                config.then1 != undefined ? config.then1 : fNulo,
+                                config.then2 != undefined ? config.then2 : fNulo
+                            );
+                            break;
+                        default:
+                            return false;
+                    }
+                    $scope.dialogOpen = true;
+                    return true;
+                }
             }
         }
     }
