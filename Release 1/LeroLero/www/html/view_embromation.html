@@ -4,9 +4,9 @@
         Você escolhe qualquer um dos trechos abaixo
         e no final monta uma frase cheia de sentido
         mas sem nenhum significado. <emoji>poo</emoji><br />
-        <sub>Vai clicando e no final você vai entender...</sub>
+        <sub style="visibility: {{infoVisibility}}">Vai clicando e no final você vai entender...</sub>
     </p>
-    <md-button class="md-primary md-raised md-button label frase" ng-click="copiar()" style="visibility: {{fraseVisibility}}">{{fraseAtual()}}</md-button>
+    <md-button class="md-primary {{fraseClass}} md-button label frase" ng-click="copiar()" style="visibility: {{fraseVisibility}}">{{fraseAtual()}}</md-button>
     <div class="frases">
         <md-button class="md-accent md-raised label" ng-repeat="parte in partes()" ng-click="selecionar($index)">{{parte}}</md-button>
     </div>

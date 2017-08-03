@@ -31,8 +31,11 @@
     opacity: 0.5;
 }
 
-.conteudo .embromation .md-button.frase.large {
+.conteudo .embromation .md-button {
     text-align: center;
+}
+
+.conteudo .embromation .md-button.frase.large {
     padding: 0.5em;
     line-height: 1.2em;
 }
