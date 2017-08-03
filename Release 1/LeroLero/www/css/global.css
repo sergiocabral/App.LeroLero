@@ -22,6 +22,16 @@
     outline: none;
 }
 
+/* Cursos do mouse hand. */
+a, md-toolbar * {
+    cursor: pointer;
+}
+
+/* Cursor de mouse padrão. */
+h1, h2, h3, h4, h5, h6, p {
+    cursor: default;
+}
+
 /* Reset para cabeçalhos. */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Bowlby One SC';
