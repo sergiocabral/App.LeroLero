@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "61a9dbfd-d0d5-4ea0-991f-be63f4731473",
-      "lastModifiedDate": 1501551725425,
+      "lastModifiedDate": 1501792343233,
       "creationDate": 1501366114187
     },
     "sourceDirectory": "www",
@@ -19,7 +19,7 @@
     "buildConfigurations": {
       "Android": {
         "platform_": "android",
-        "runtime_": "Crosswalk with Cordova 3.x",
+        "runtime_": "Cordova 3.x",
         "name_": "Android",
         "preferences_": {
           "android-minSdkVersion": "19",
@@ -31,11 +31,11 @@
           "AndroidLaunchMode": "singleTop"
         },
         "isActive_": true,
-        "certificateId_": "tXTUmdGn7U2yt81RhfihTw2",
-        "cordovaCLIVersion_": "6.2.0",
+        "certificateId_": "njTEKF7CAESlELvcxVJUHA2",
+        "cordovaCLIVersion_": "6.5.0",
         "crosswalkVersion_": "23",
         "appName_": "Lero Lero",
-        "appID_": "cabral.lerolero",
+        "appID_": "br.srv.cabral.discursation",
         "appAccess_": {
           "mode": "whitelist",
           "network": [
@@ -48,16 +48,93 @@
             "sms:*",
             "mailto:*",
             "geo:*",
-            "market:*"
+            "market:*",
+            "whatsapp:*"
           ],
-          "navigation": []
+          "navigation": [],
+          "properties": {}
         },
-        "icons_": [],
-        "splashes_": [],
+        "icons_": [
+          {
+            "density": "ldpi",
+            "relPath": "package-assets/icon0036.png",
+            "width": 36,
+            "height": 36
+          },
+          {
+            "density": "mdpi",
+            "relPath": "package-assets/icon0048.png",
+            "width": 48,
+            "height": 48
+          },
+          {
+            "density": "hdpi",
+            "relPath": "package-assets/icon0072.png",
+            "width": 72,
+            "height": 72
+          },
+          {
+            "density": "xhdpi",
+            "relPath": "package-assets/icon0096.png",
+            "width": 96,
+            "height": 96
+          }
+        ],
+        "splashes_": [
+          {
+            "relPath": "package-assets/splash0320x0470.png",
+            "density": "mdpi",
+            "height": 470,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "package-assets/splash0480x0640.png",
+            "density": "hdpi",
+            "height": 640,
+            "width": 480,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "package-assets/splash0320x0426.png",
+            "density": "ldpi",
+            "height": 426,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "package-assets/splash-land-0426x0320.png",
+            "density": "ldpi",
+            "height": 320,
+            "width": 426,
+            "orientation": "landscape"
+          },
+          {
+            "relPath": "package-assets/splash-land-0470x0320.png",
+            "density": "mdpi",
+            "height": 320,
+            "width": 470,
+            "orientation": "landscape"
+          },
+          {
+            "relPath": "package-assets/splash-land-0640x0480.png",
+            "density": "hdpi",
+            "height": 480,
+            "width": 640,
+            "orientation": "landscape"
+          },
+          {
+            "relPath": "package-assets/splash-land-0960x0720.png",
+            "density": "xhdpi",
+            "height": 720,
+            "width": 960,
+            "orientation": "landscape"
+          }
+        ],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "appVersion_": "0.1",
-        "appVersionCode_": "1",
+        "appVersion_": "3",
+        "appVersionCode_": "3",
         "appDescription_": "Gerador de Lero Lero. Fale tudo sem falar nada.",
         "appAuthor_": "sergio@cabral.br.com",
         "signed_": true
@@ -75,7 +152,7 @@
         },
         "isActive_": false,
         "certificateId_": "",
-        "cordovaCLIVersion_": "6.2.0",
+        "cordovaCLIVersion_": "6.5.0",
         "crosswalkVersion_": "23",
         "appName_": "Gerador de Lero Lero",
         "appID_": "cabral.lerolero",
@@ -118,7 +195,7 @@
         },
         "isActive_": false,
         "certificateId_": "",
-        "cordovaCLIVersion_": "6.2.0",
+        "cordovaCLIVersion_": "6.5.0",
         "crosswalkVersion_": "23",
         "appName_": "Gerador de Lero Lero",
         "appID_": "xdk.intel.template",
