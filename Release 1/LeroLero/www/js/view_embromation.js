@@ -1,4 +1,7 @@
-﻿var $scope = Site.Angular.ConteudoControllerScope;
+﻿var $scope = Site.Angular.ConteudoControllerContext.$scope;
+var $location = Site.Angular.ConteudoControllerContext.$location;
+var $rootScope = Site.Angular.ConteudoControllerContext.$rootScope;
+var $window = Site.Angular.ConteudoControllerContext.$window;
 
 $scope.frases = [
     [
@@ -51,9 +54,32 @@ $scope.frases = [
     ],
 ];
 
-$scope.grupo = 1;
+$scope.grupo = parseInt($location.hash());
+$scope.grupo = (isNaN($scope.grupo) ? 1 : $scope.grupo) - 1;
+$rootScope.partesSelecionadas = ($rootScope.partesSelecionadas || []).slice(0, $scope.grupo);
 
-$scope.parte = function (posicao) {
+$scope.fraseVisibility = $scope.grupo == 0 ? 'hidden' : 'visible';
 
-    return 
+$scope.fraseAtual = function (e) {
+    var frase = "";
+    for (var i = 0; i < $rootScope.partesSelecionadas.length; i++) {
+        frase += " " + $scope.frases[i][$rootScope.partesSelecionadas[i]];
+    }
+    return frase.trim();
+}
+
+$scope.partes = function () {
+    var partes = $scope.frases[$scope.grupo];
+    if (partes) {
+        $(".ng-enter .md-button.frase").removeClass("large");
+    }
+    else {
+        $(".ng-enter .md-button.frase").addClass("large");
+    }
+    return partes
+}
+
+$scope.selecionar = function (index) {
+    $rootScope.partesSelecionadas.push(index);
+    $window.location.href = "#!/embromation#" + ($scope.grupo + 2);
 }

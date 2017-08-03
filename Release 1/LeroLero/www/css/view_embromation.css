@@ -4,7 +4,7 @@
 
 .conteudo .embromation p {
     text-align: center;
-    margin: 1em 10%;
+    margin: 1em 10% -34px 10%;
 }
 
 .conteudo .embromation sub {
@@ -19,4 +19,19 @@
     text-align: left;
     padding: .3em .6em;
     width: 85%;
+}
+
+.conteudo .embromation .md-button.frase {
+    width: 85%;
+    text-transform: none;
+    white-space: normal;
+    text-align: left;
+    padding: .3em .6em;
+}
+
+.conteudo .embromation .md-button.frase.large {
+    font-size: 2em;
+    text-align: center;
+    padding: 0.5em;
+    line-height: 1.2em;
 }

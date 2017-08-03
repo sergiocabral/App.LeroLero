@@ -1,1 +1,1 @@
-﻿var $scope = Site.Angular.ConteudoControllerScope;
+﻿var $scope = Site.Angular.ConteudoControllerContext.$scope;

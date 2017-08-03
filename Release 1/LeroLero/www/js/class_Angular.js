@@ -27,7 +27,7 @@ window.Angular = function (site) {
     //Objetos instanciados do angular.
     _this.TelaModule = undefined;
     _this.ConteudoModule = undefined;
-    _this.ConteudoControllerScope = undefined;
+    _this.ConteudoControllerContext = {};
     _this.TelaDialogo = undefined;
 
     //Função para abrir ou fechar o menu lateral.
@@ -216,14 +216,20 @@ window.Angular = function (site) {
                     return arquivoHtml;
                 },
                 controllerAs: nome + "-controller",
-                controller: ['$scope', '$http', '$location', '$timeout', '$route',
-                    function ($scope, $http, $location, $timeout, $route) {
+                controller: ['$scope', '$http', '$location', '$timeout', '$route', '$rootScope', '$window',
+                    function ($scope, $http, $location, $timeout, $route, $rootScope, $window) {
                         $timeout(function () {
                             $http.get(arquivoJs)
                                     .then(function (response) {
                                         _this.Historico.push($location.$$absUrl);
 
-                                        _this.ConteudoControllerScope = $scope;
+                                        _this.ConteudoControllerContext.$scope = $scope;
+                                        _this.ConteudoControllerContext.$http = $http;
+                                        _this.ConteudoControllerContext.$location = $location;
+                                        _this.ConteudoControllerContext.$timeout = $timeout;
+                                        _this.ConteudoControllerContext.$route = $route;
+                                        _this.ConteudoControllerContext.$rootScope = $rootScope;
+                                        _this.ConteudoControllerContext.$window = $window;
 
                                         $(".conteudo.ng-enter").css("background", "linear-gradient(white," + _this.Site.Comportamento.CorDeFundoAleatoria() + " 80%)");
 

@@ -1,4 +1,4 @@
-﻿var $scope = Site.Angular.ConteudoControllerScope;
+﻿var $scope = Site.Angular.ConteudoControllerContext.$scope;
 
 $scope.acessarPortalCabral = function () {
     Site.Comportamento.AbrirUrl("http://www.cabral.br.com/");
