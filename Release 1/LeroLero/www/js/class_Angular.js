@@ -68,8 +68,8 @@ window.Angular = function (site) {
 
         $mdThemingProvider
             .theme('default')
-            .primaryPalette('amber')
-            .accentPalette('deep-orange')
+            .primaryPalette('purple')
+            .accentPalette('deep-purple')
             .warnPalette('red');
     };
 
