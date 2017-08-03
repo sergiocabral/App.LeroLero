@@ -7,6 +7,21 @@
     margin: 1em 10% -34px 10%;
 }
 
+.conteudo .embromation .final p {
+    margin-top: 0px;
+    font-size: 80%;
+    opacity: 0.5;
+}
+
+.conteudo .embromation .final p emoji {
+    position: relative;
+    top: 2px;
+}
+
+.conteudo .embromation .final .md-button {
+    margin-top: 2.5em;
+}
+
 .conteudo .embromation sub {
     font-size: 80%;
     opacity: 0.5;
