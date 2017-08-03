@@ -27,4 +27,6 @@ $scope.girar = function (e) {
     else {
         fGirar();
     }
+
+    $('body').focus();
 }

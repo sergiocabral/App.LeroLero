@@ -5,7 +5,7 @@
 .conteudo .sobre .logo {
     height: 10em;    
     width: 10em;
-    margin: auto;
+    margin: 0 auto 1em auto;
     background-image: url(../img/meu-logo.png);
     background-position: center;
     background-repeat: no-repeat;

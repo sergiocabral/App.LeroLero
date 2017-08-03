@@ -19,6 +19,7 @@
     margin: 0;
     font-family: 'Acme';
     font-size: 105%;
+    outline: none;
 }
 
 /* Reset para cabeçalhos. */
@@ -28,27 +29,27 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Reset para H1 */
 h1 {
-    font-size: 300%;
+    font-size: 200%;
 }
 
 /* Reset para H2 */
 h2 {
-    font-size: 250%;
+    font-size: 180%;
 }
 
 /* Reset para H3 */
 h3 {
-    font-size: 200%;
+    font-size: 160%;
 }
 
 /* Reset para H4 */
 h4 {
-    font-size: 175%;
+    font-size: 140%;
 }
 
 /* Reset para H5 */
 h5 {
-    font-size: 125%;
+    font-size: 120%;
 }
 
 /* Reset para H6 */
