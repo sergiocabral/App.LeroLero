@@ -107,6 +107,7 @@ body {
     margin: 0 0.5em 0 0;
 }
 
+/* Altura da barra fixa.*/
 .md-toolbar-tools,
 md-toolbar {
     height: 64px;
