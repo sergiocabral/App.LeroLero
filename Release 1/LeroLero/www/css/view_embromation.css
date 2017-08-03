@@ -7,7 +7,7 @@
     margin: 1em 10% -34px 10%;
 }
 
-.conteudo .embromation .final p {
+.conteudo .embromation .final p:first-child {
     margin-top: 0px;
     font-size: 80%;
     opacity: 0.5;
@@ -19,7 +19,7 @@
 }
 
 .conteudo .embromation .final .md-button {
-    margin-top: 2.5em;
+    margin-top: 1.5em;
 }
 
 .conteudo .embromation sub {
@@ -45,7 +45,6 @@
 }
 
 .conteudo .embromation .md-button.frase.large {
-    font-size: 2em;
     text-align: center;
     padding: 0.5em;
     line-height: 1.2em;

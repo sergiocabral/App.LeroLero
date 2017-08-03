@@ -74,6 +74,11 @@ h6 {
     font-size: 100%;
 }
 
+/* Posição do toast */
+md-toast {
+    position: fixed;
+}
+
 /* Redefine o tamanho dos buttons */
 .md-button {
     padding: 10px 30px;

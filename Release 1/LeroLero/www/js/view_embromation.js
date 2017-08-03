@@ -59,7 +59,7 @@ $scope.grupo = (isNaN($scope.grupo) ? 1 : $scope.grupo) - 1;
 $rootScope.partesSelecionadas = ($rootScope.partesSelecionadas || []).slice(0, $scope.grupo);
 
 $scope.fraseVisibility = $scope.grupo == 0 ? 'hidden' : 'visible';
-$scope.finalDisplay = $scope.grupo == 3 ? 'nonde' : 'auto';
+$scope.finalDisplay = $scope.grupo == 4 ? 'block' : 'none';
 
 $scope.fraseAtual = function (e) {
     var frase = "";
@@ -94,4 +94,5 @@ $scope.copiar = function () {
         .focus();
     document.execCommand("copy");
     $(".conteudo input.clipboard").remove();
+    Site.Comportamento.Toast("Copiado para área de transferência");
 }

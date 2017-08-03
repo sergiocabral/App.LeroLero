@@ -65,6 +65,19 @@ window.Comportamento = function (site) {
         return _this.Site.Angular.ExibirMenuLateral(modo);
     }
 
+    _this.Toast = function (texto, config) {
+        /// <summary>
+        /// Mensagem como toast
+        /// </summary>
+        /// <param name="texto" type="string">Mensagem</param>
+        /// <param name="config" type="json">Parâmetros</param>
+
+        _this.Site.Angular.ExibirDialogo("toast", $.extend(config || {}, {
+            text: texto
+        }));
+    }
+
+
     _this.Alerta = function (texto, titulo, botao, config) {
         /// <summary>
         /// Mensagem de alerta

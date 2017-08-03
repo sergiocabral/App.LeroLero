@@ -55,7 +55,7 @@ window.Angular = function (site) {
 
         _this.DialogoModule = angular
             .module('dialogo-module', ['ngMaterial'])
-            .controller('dialogo-controller', ['$scope', '$mdDialog', _this.DialogoController]);
+            .controller('dialogo-controller', ['$scope', '$mdDialog', '$mdToast', _this.DialogoController]);
         
         angular.bootstrap(angular.element('.tela'), ['tela-module', 'conteudo-module', 'dialogo-module']);
     };
@@ -73,19 +73,21 @@ window.Angular = function (site) {
             .warnPalette('red');
     };
 
-    _this.DialogoController = function ($scope, $mdDialog) {
+    _this.DialogoController = function ($scope, $mdDialog, $mdToast) {
         /// <summary>
         /// Controller da caixa de dialogo.
         /// </summary>
         /// <param name="$scope" type="object">Escopo do controller.</param>
         /// <param name="$mdDialog" type="object">Provider da caixa de diálogo.</param>
+        /// <param name="$mdToast" type="object">Provider do toast.</param>
 
         if (_this.ExibirDialogo() === undefined) {
             _this.ExibirDialogo = function (tipo, config) {
                 config = config || {};
                 var dialogo = $mdDialog;
+                var toast = $mdToast;
 
-                if ($scope.dialogOpen) {                    
+                if ($scope.dialogOpen && tipo != "toast") {
                     dialogo.cancel();
                     return false;
                 }
@@ -93,6 +95,13 @@ window.Angular = function (site) {
                     var fNulo = function () { };
 
                     switch (tipo) {
+                        case "toast":
+                            $mdToast.show(
+                                $mdToast.simple()
+                                .textContent(config.text != undefined ? config.text : 'Ops toast...')
+                                .position(config.position != undefined ? config.position : 'bottom left')
+                                .hideDelay(config.hideDelay != undefined ? config.hideDelay : 2000));
+                            break;
                         case "alertar":
                             config = $.extend(config, {
                                 parent: angular.element(document.querySelector(config.parent != undefined ? config.parent : 'body')),
