@@ -3,7 +3,7 @@
     <p>
         Você escolhe qualquer um dos trechos abaixo
         e no final monta uma frase cheia de sentido
-        mas sem nenhum significado. <emoji ng-click="randomico()">poo</emoji><br />
+        mas sem nenhum significado. <emoji ng-click="randomico()" class="{{aleatorioClass}}">poo</emoji><br />
         <sub style="visibility: {{infoVisibility}}">Vai clicando e no final você vai entender...</sub>
     </p>
     <md-button class="md-primary {{fraseClass}} md-button label frase" ng-click="copiar()" style="visibility: {{fraseVisibility}}">{{fraseAtual()}}</md-button>

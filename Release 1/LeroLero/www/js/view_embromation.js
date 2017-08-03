@@ -57,12 +57,12 @@ $scope.frases = [
 $scope.grupo = parseInt($location.hash());
 $scope.grupo = (isNaN($scope.grupo) ? 1 : $scope.grupo) - 1;
 $rootScope.partesSelecionadas = $rootScope.partesSelecionadas || [];
-
 $scope.infoDisplay = $scope.grupo != 0 ? 'none' : 'block';
 $scope.infoVisibility = $scope.grupo != 0 ? 'hidden' : 'visible';
 $scope.fraseClass = $scope.grupo == 4 ? 'md-raised' : '';
 $scope.fraseVisibility = $scope.grupo == 0 ? 'hidden' : 'visible';
 $scope.finalDisplay = $scope.grupo == 4 ? 'block' : 'none';
+$scope.aleatorioClass = $scope.grupo == 4 ? 'btn-aleatorio' : '';
 
 $scope.fraseAtual = function (e) {
     var frase = "";
