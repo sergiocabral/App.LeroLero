@@ -23,29 +23,12 @@
 }
 
 .conteudo .embromation .final .md-button {
-    margin-top: 2.3em;
+    margin-top: 1.6em;
 }
 
 .conteudo .embromation sub {
     font-size: 80%;
     opacity: 0.5;
-}
-
-.conteudo .embromation .frases .md-button {
-    white-space: normal;
-    text-transform: none;
-    font-size: 115%;
-    text-align: left;
-    padding: .3em .6em;
-    width: 85%;
-}
-
-.conteudo .embromation .md-button.frase {
-    width: 85%;
-    text-transform: none;
-    white-space: normal;
-    text-align: left;
-    padding: .3em .6em;
 }
 
 .conteudo .embromation .md-button.frase.large {

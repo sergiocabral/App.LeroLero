@@ -2,7 +2,6 @@
 @keyframes entrada {
     from {
         transform: translateX(100%);
-        opacity: 0.5; 
     }
 }
 
@@ -10,7 +9,6 @@
 @keyframes saida {
     to {
         transform: translateX(-100%);
-        opacity: 0.5; 
     }
 }
 
@@ -83,6 +81,16 @@ md-toast {
 .md-button {
     padding: 10px 30px;
     font-size: 100%;
+}
+
+/* Exibir botão como label*/
+.md-button.label {
+    white-space: normal;
+    text-transform: none;
+    font-size: 115%;
+    text-align: left;
+    padding: .3em .6em;
+    width: 85%;
 }
 
 /* Aumentador de tamanho para buttons */
