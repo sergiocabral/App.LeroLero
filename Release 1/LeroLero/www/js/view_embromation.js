@@ -50,3 +50,10 @@ $scope.frases = [
         'dos conceitos de participação geral.'
     ],
 ];
+
+$scope.grupo = 1;
+
+$scope.parte = function (posicao) {
+
+    return 
+}
