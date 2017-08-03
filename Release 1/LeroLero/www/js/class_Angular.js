@@ -82,6 +82,7 @@ window.Angular = function (site) {
 
         if (_this.ExibirDialogo() === undefined) {
             _this.ExibirDialogo = function (tipo, config) {
+                window._a = $mdDialog;
                 config = config || {};
                 var dialogo = $mdDialog;
                 var fNulo = function () { };

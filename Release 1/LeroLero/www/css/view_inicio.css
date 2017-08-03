@@ -4,7 +4,7 @@
 
 .conteudo .inicio .logo {
     height: 10em;
-    background-image: url(/img/bla-bla-bla.png);
+    background-image: url(../img/bla-bla-bla.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

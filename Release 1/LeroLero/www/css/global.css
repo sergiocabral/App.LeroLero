@@ -14,10 +14,25 @@
     }
 }
 
+/* Animação para girar 360 graus */
+@keyframes girar-antihorario {
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animação para girar 360 graus */
+@keyframes girar-horario {
+    from {
+        transform: rotate(-360deg);
+    }
+}
+
 /* Reset para todos os elementos. */
 * {
     margin: 0;
     font-family: 'Acme';
+    font-size: 105%;
 }
 
 /* Reset para cabeçalhos. */
@@ -25,28 +40,46 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Bowlby One SC';
 }
 
+/* Reset para H1 */
 h1 {
-    font-size: 3em;
+    font-size: 300%;
 }
 
+/* Reset para H2 */
 h2 {
-    font-size: 2.5em;
+    font-size: 250%;
 }
 
+/* Reset para H3 */
 h3 {
-    font-size: 2em;
+    font-size: 200%;
 }
 
+/* Reset para H4 */
 h4 {
-    font-size: 1.6em;
+    font-size: 175%;
 }
 
+/* Reset para H5 */
 h5 {
-    font-size: 1.3em;
+    font-size: 125%;
 }
 
+/* Reset para H6 */
 h6 {
-    font-size: 1em;
+    font-size: 100%;
+}
+
+/* Redefine o tamanho dos buttons */
+.md-button {
+    padding: 10px 30px;
+    font-size: 100%;
+}
+
+/* Aumentador de tamanho para buttons */
+.md-button.large {
+    padding: 15px 50px;
+    font-size: 150%;
 }
 
 /* Animação Angular: ENTRADA do elemento. */
@@ -119,7 +152,7 @@ md-toolbar {
     position: fixed;
     bottom: 0;
     top: 64px;
-    padding: 1em 1em 1em 0;
+    padding: 1em 0;
     width: 100%;
     overflow: auto;
 }
