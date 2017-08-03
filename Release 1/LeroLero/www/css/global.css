@@ -14,20 +14,6 @@
     }
 }
 
-/* Animação para girar 360 graus */
-@keyframes girar-antihorario {
-    from {
-        transform: rotate(360deg);
-    }
-}
-
-/* Animação para girar 360 graus */
-@keyframes girar-horario {
-    from {
-        transform: rotate(-360deg);
-    }
-}
-
 /* Reset para todos os elementos. */
 * {
     margin: 0;

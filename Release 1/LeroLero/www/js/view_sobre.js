@@ -5,25 +5,26 @@ $scope.acessarPortalCabral = function () {
 };
 
 $scope.girar = function (e) {
-    var girando = Boolean($scope.girando);
     var obj = $(e.target);
-    var tempo = 3;
+    obj.attr("girando", obj.attr("girando") != "true");
+    obj.attr("angulo", isNaN(obj.attr("angulo")) ? "0" : obj.attr("angulo"));
+    obj.attr("direcao", isNaN(obj.attr("direcao")) ? "1" : obj.attr("direcao"));
+
     var fGirar = function () {
-        if (!obj.hasClass("girar")) { return; }
-        if (String(obj.css("animation")).indexOf("girar") >= 0) {
-            obj.css("animation", "");
-            setTimeout(fGirar, 100);
-        }
-        else {
-            var direcao = obj.attr("animation") != "girar-horario" ? "girar-horario" : "girar-antihorario";
-            obj.attr("animation", direcao);
-            obj.css("animation", direcao + " " + tempo + "s both ease-in");
-            setTimeout(fGirar, tempo * 1000);
+        if (obj.attr("girando") != "true") { return; }
+
+        var angulo = parseInt(obj.attr("angulo")) + 1 * parseInt(obj.attr("direcao"));
+        obj.attr("angulo", angulo);
+        obj.css("transform", "rotate(" + angulo + "deg)");
+        if (obj.is(":visible")) {
+            setTimeout(fGirar, 1);
         }
     }
 
-    obj.toggleClass("girar");    
-    if (obj.hasClass("girar")) {
+    if (obj.attr("girando") != "true") {
+        obj.attr("direcao", parseInt(obj.attr("direcao")) * -1);
+    }
+    else {
         fGirar();
     }
 }
