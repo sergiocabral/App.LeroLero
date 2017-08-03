@@ -85,8 +85,7 @@ window.Angular = function (site) {
                 config = config || {};
                 var dialogo = $mdDialog;
 
-                if ($scope.dialogOpen) {
-                    $scope.dialogOpen = false;
+                if ($scope.dialogOpen) {                    
                     dialogo.cancel();
                     return false;
                 }
@@ -109,7 +108,9 @@ window.Angular = function (site) {
                             dialogo.show(dialogo.alert(config)).then(
                                 config.then1 != undefined ? config.then1 : fNulo,
                                 config.then2 != undefined ? config.then2 : fNulo
-                            );
+                            ).finally(function () {
+                                $scope.dialogOpen = false;
+                            });;
                             break;
                         case "confirmar":
                             config = $.extend(config, {
@@ -127,7 +128,9 @@ window.Angular = function (site) {
                             dialogo.show(dialogo.confirm(config)).then(
                                 config.then1 != undefined ? config.then1 : fNulo,
                                 config.then2 != undefined ? config.then2 : fNulo
-                            );
+                            ).finally(function () {
+                                $scope.dialogOpen = false;
+                            });
                             break;
                         default:
                             return false;
