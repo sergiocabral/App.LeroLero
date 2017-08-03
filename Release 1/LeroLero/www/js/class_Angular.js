@@ -1,4 +1,4 @@
-﻿'use strict';
+﻿    'use strict';
 
 window.Angular = function (site) {
     /// <summary>
@@ -242,6 +242,7 @@ window.Angular = function (site) {
 
         $routeProvider
 			.when('/inicio', fWhenConfig("inicio"))
+			.when('/embromation', fWhenConfig("embromation"))
 			.when('/sobre', fWhenConfig("sobre"))
             .otherwise({ redirectTo: '/inicio' });
     };

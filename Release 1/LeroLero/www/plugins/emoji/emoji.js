@@ -11,13 +11,13 @@ $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
 });
 
 var emoji = function () {
-    $('emoji').html(function (i, text) {
+    $('emoji:not(.emoji)').html(function (i, text) {
         text = "{" + text + "}";
         $.each(f, function (i, v) {
             text = text.replace(re[i], "<img src='plugins/emoji/img/" + r[i] + ".png' class='emoji' />");
         });
         return text;
-    });
+    }).addClass("emoji");
 }
 
 $(document).ready(emoji);

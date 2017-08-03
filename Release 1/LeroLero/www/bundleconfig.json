@@ -298,5 +298,23 @@
     "inputFiles": [
       "plugins/emoji/emoji.js"
     ]
+  },
+  {
+    "outputFileName": "html/view_embromation.min.html",
+    "inputFiles": [
+      "html/view_embromation.html"
+    ]
+  },
+  {
+    "outputFileName": "js/view_embromation.min.js",
+    "inputFiles": [
+      "js/view_embromation.js"
+    ]
+  },
+  {
+    "outputFileName": "css/view_embromation.min.css",
+    "inputFiles": [
+      "css/view_embromation.css"
+    ]
   }
 ]
