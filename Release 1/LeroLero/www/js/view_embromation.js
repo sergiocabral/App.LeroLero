@@ -99,10 +99,6 @@ $scope.copiar = function () {
     $(".conteudo input.clipboard").remove();
     $(".conteudo .final p > span").animate({ "opacity": "1" });
     setTimeout(function () { $(".conteudo .final p > span").animate({ "opacity": "0" }); }, 2000);
-
-    if (Site.Cordova.Ativo()) {
-        Site.Comportamento.AbrirUrl("whatsapp://send?text=" + $(".md-button.frase").text());
-    }
 }
 
 $scope.randomico = function () {
