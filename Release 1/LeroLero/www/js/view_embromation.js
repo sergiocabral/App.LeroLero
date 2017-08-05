@@ -116,8 +116,8 @@ $scope.compartilhar_processando = false;
 $scope.compartilhar = function (rede) {
     if ($scope.compartilhar_processando) { return; }
     $scope.compartilhar_processando = true;
-
-    $("body").append($(".md-button.frase")[0].outerHTML.replace("visibility", "z-index: -1000; padding: 5px; text-align: center;" + "visibility"));
+    
+    $("body").append($(".md-button.frase")[0].outerHTML.replace("visibility", "z-index: -1000; padding: 5px; text-align: center; background-image: url(img/bla-bla-bla-fundo.png); background-repeat: no-repeat; background-position: center; background-size: cover;" + "visibility"));
     var obj = $("body > .md-button.frase");
     var texto = obj.text();
     if (obj.height() < 300) {

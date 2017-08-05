@@ -65,7 +65,9 @@ window.SocialShare = function (site) {
             imagem,
             null /* url */,
             function () { console.log('share ok'); },
-            function (errormsg) { alert('share error: ' + errormsg); });
+            function (errormsg) {
+                _this.Site.Comportamento.Alert("Eu acho que você não tem o Whatsapp instalado. Não posso fazer nada.");
+            });
     }
 
     _this.Facebook = function (texto, imagem) {
@@ -82,7 +84,9 @@ window.SocialShare = function (site) {
             imagem,
             null /* url */,
             function () { console.log('share ok'); },
-            function (errormsg) { alert('share error: ' + errormsg); });
+            function (errormsg) {
+                _this.Site.Comportamento.Alert("Você tem o Facebook instalado? Acho que não.");
+            });
     }
 
     _this.Instagram = function (texto, imagem) {
@@ -98,10 +102,12 @@ window.SocialShare = function (site) {
             texto,
             imagem,
             function () { console.log('share ok'); },
-            function (errormsg) { alert('share error: ' + errormsg); });
+            function (errormsg) {
+                _this.Site.Comportamento.Alert("Pra compartilhar pro Instagram tem que instalar ele primeiro né?!");
+            });
     }
 
-    _this.Twitter = function (texto) {
+    _this.Twitter = function (texto, imagem) {
         /// <summary>
         /// Compartilha para o Whatsapp
         /// </summary>
@@ -111,13 +117,15 @@ window.SocialShare = function (site) {
 
         window.plugins.socialsharing.shareViaTwitter(
             texto,
-            null /* file */,
+            imagem,
             null /* url */,
             function () { console.log('share ok'); },
-            function (errormsg) { alert('share error: ' + errormsg); });
+            function (errormsg) {
+                _this.Site.Comportamento.Alert("Você nem tem o Twitter instalado. Não posso ajudar dessa vez.");
+            });
     }
 
-    _this.Generico = function (texto) {
+    _this.Generico = function (texto, imagem) {
         /// <summary>
         /// Compartilha como texto para o android
         /// </summary>
@@ -128,10 +136,12 @@ window.SocialShare = function (site) {
         window.plugins.socialsharing.share(
             texto,
             null /* subject */,
-            null /* fileOrFileArray */,
+            imagem,
             null /* url */,
             function () { console.log('share ok'); },
-            function (errormsg) { alert('share error: ' + errormsg); });
+            function (errormsg) {
+                _this.Site.Comportamento.Alert("Ops! Alguma coisa deu errado. Não consegui compartilhar.");
+            });
     }
 
 };
