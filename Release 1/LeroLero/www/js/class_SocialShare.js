@@ -66,7 +66,7 @@ window.SocialShare = function (site) {
             null /* url */,
             function () { console.log('share ok'); },
             function (errormsg) {
-                _this.Site.Comportamento.Alert("Eu acho que você não tem o Whatsapp instalado. Não posso fazer nada.");
+                setTimeout(function () { _this.Site.Comportamento.Alert("Eu acho que você não tem o Whatsapp instalado. Não posso fazer nada."); }, 100);
             });
     }
 
@@ -85,7 +85,7 @@ window.SocialShare = function (site) {
             null /* url */,
             function () { console.log('share ok'); },
             function (errormsg) {
-                _this.Site.Comportamento.Alert("Você tem o Facebook instalado? Acho que não.");
+                setTimeout(function () { _this.Site.Comportamento.Alert("Você tem o Facebook instalado? Acho que não."); }, 100);
             });
     }
 
@@ -103,7 +103,7 @@ window.SocialShare = function (site) {
             imagem,
             function () { console.log('share ok'); },
             function (errormsg) {
-                _this.Site.Comportamento.Alert("Pra compartilhar pro Instagram tem que instalar ele primeiro né?!");
+                setTimeout(function () { _this.Site.Comportamento.Alert("Pra compartilhar pro Instagram tem que instalar ele primeiro né?!"); }, 100);
             });
     }
 
@@ -121,7 +121,7 @@ window.SocialShare = function (site) {
             null /* url */,
             function () { console.log('share ok'); },
             function (errormsg) {
-                _this.Site.Comportamento.Alert("Você nem tem o Twitter instalado. Não posso ajudar dessa vez.");
+                setTimeout(function () { _this.Site.Comportamento.Alert("Você nem tem o Twitter instalado. Não posso ajudar dessa vez."); }, 100);
             });
     }
 
@@ -140,7 +140,7 @@ window.SocialShare = function (site) {
             null /* url */,
             function () { console.log('share ok'); },
             function (errormsg) {
-                _this.Site.Comportamento.Alert("Ops! Alguma coisa deu errado. Não consegui compartilhar.");
+                setTimeout(function () { _this.Site.Comportamento.Alert("Ops! Alguma coisa deu errado. Não consegui compartilhar."); }, 100);
             });
     }
 

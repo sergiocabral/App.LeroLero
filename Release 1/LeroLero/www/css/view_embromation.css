@@ -31,14 +31,14 @@
 }
 
 .conteudo .embromation .final .compartilhar i {
-    font-size: 180%;
-    background-color: #6493E3;
-    color: white;
+    font-size: 150%;
+    background-color: #6493e3;
+    color: #fff;
     padding: 6px 10px;
-    border-radius: 0.2em;
-    margin: 5px 15px;
+    border-radius: .2em;
+    margin: 5px 3px;
     cursor: pointer;
-    opacity: 0.6;
+    opacity: .6;
 }
 
 .conteudo .embromation .final .compartilhar i:hover {
