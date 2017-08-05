@@ -65,7 +65,7 @@ window.SocialShare = function (site) {
             imagem,
             null /* url */,
             function () { console.log('share ok'); },
-            function (errormsg) { console.log('share error: ' + errormsg); });
+            function (errormsg) { alert('share error: ' + errormsg); });
     }
 
     _this.Facebook = function (texto, imagem) {
@@ -82,7 +82,7 @@ window.SocialShare = function (site) {
             imagem,
             null /* url */,
             function () { console.log('share ok'); },
-            function (errormsg) { console.log('share error: ' + errormsg); });
+            function (errormsg) { alert('share error: ' + errormsg); });
     }
 
     _this.Instagram = function (texto, imagem) {
@@ -98,7 +98,7 @@ window.SocialShare = function (site) {
             texto,
             imagem,
             function () { console.log('share ok'); },
-            function (errormsg) { console.log('share error: ' + errormsg); });
+            function (errormsg) { alert('share error: ' + errormsg); });
     }
 
     _this.Twitter = function (texto) {
@@ -114,7 +114,7 @@ window.SocialShare = function (site) {
             null /* file */,
             null /* url */,
             function () { console.log('share ok'); },
-            function (errormsg) { console.log('share error: ' + errormsg); });
+            function (errormsg) { alert('share error: ' + errormsg); });
     }
 
     _this.Generico = function (texto) {
@@ -131,7 +131,7 @@ window.SocialShare = function (site) {
             null /* fileOrFileArray */,
             null /* url */,
             function () { console.log('share ok'); },
-            function (errormsg) { console.log('share error: ' + errormsg); });
+            function (errormsg) { alert('share error: ' + errormsg); });
     }
 
 };
