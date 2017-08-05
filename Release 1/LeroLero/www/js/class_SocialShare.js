@@ -104,7 +104,9 @@ window.SocialShare = function (site) {
             imagem,
             function () { console.log('share ok'); },
             function (errormsg) {
-                _this.Site.Comportamento.Alerta("Pra compartilhar pro Instagram tem que instalar ele primeiro né?!");
+                if (texto && imagem) {
+                    _this.Site.Comportamento.Alerta("Pra compartilhar pro Instagram tem que instalar ele primeiro né?!");
+                }
             });
     }
 
