@@ -91,18 +91,22 @@ $scope.selecionar = function (index) {
 $scope.copiar = function () {
     var texto = $(".md-button.frase").text();
 
-    $(".conteudo")
-        .append("<input type='text' class='clipboard' style='position: fixed; top: -100px;' />")
-        .find("input.clipboard")
-        .val(texto)
-        .select()
-        .focus();
-    document.execCommand("copy");
+    if (Site.Cordova.Ativo()) {
+        Site.Cordova.AreaDeTransferencia(texto);
+    }
+    else {
+        $(".conteudo")
+            .append("<input type='text' class='clipboard' style='position: fixed; top: -100px;' />")
+            .find("input.clipboard")
+            .val(texto)
+            .select()
+            .focus();
+        document.execCommand("copy");
+    }    
+
     $(".conteudo input.clipboard").remove();
     $(".conteudo .final p > span").animate({ "opacity": "1" });
     setTimeout(function () { $(".conteudo .final p > span").animate({ "opacity": "0" }); }, 2000);
-
-    Site.Cordova.AreaDeTransferencia(texto);
 }
 
 $scope.randomico = function () {
@@ -114,9 +118,11 @@ $scope.randomico = function () {
 
 $scope.compartilhar = function (rede) {
     var texto = $(".md-button.frase").text();
+    alert(texto);
     html2canvas($(".md-button.frase")[0], {
         onrendered: function (canvas) {
             imagem = canvas.toDataURL('image/png');
+            alert(imagem.length);
             Site.SocialShare.Compartilhar(rede, texto, imagem);
         }
     });    
