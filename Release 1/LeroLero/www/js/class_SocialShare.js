@@ -33,6 +33,10 @@ window.SocialShare = function (site) {
 
         imagem = imagem ? imagem : null;
 
+        alert("rede: " + rede);
+        alert("texto: " + texto);
+        alert("imagem: " + imagem);
+
         switch (rede) {
             case "whatsapp":
                 _this.Whatsapp(texto, imagem);
@@ -57,8 +61,9 @@ window.SocialShare = function (site) {
         /// </summary>
         /// <param name="texto" type="string">Texto</param>
         /// <param name="imagem" type="string">Caminho da imagem</param>
-
+        alert(1);
         if (!window.plugins || !window.plugins.socialsharing) { return; }
+        alert(2);
 
         alert(window.plugins.socialsharing.shareViaWhatsApp(
             texto,

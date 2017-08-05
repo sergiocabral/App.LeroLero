@@ -141,7 +141,6 @@ $scope.compartilhar = function (rede) {
                     window.canvas2ImagePlugin.saveImageDataToLibrary(
                         function (file) {
                             file = "file://" + file;
-                            alert(file);
                             Site.SocialShare.Compartilhar(rede, texto, imagem)
                         },
                         function (err) {
