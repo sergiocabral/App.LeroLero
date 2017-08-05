@@ -36,16 +36,16 @@ window.SocialShare = function (site) {
 
         switch (rede) {
             case "whatsapp":
-                _this.Whatsapp(texto, url, imagem);
+                _this.Whatsapp(texto, null, imagem);
                 break;
             case "facebook":
-                _this.Facebook(texto, url, imagem);
+                _this.Facebook(texto, null, imagem);
                 break;
             case "instagram":
-                _this.Instagram(texto, url, imagem);
+                _this.Instagram(texto, null, imagem);
                 break;
             case "twitter":
-                _this.Twitter(texto, url, imagem);
+                _this.Twitter(texto, null, imagem);
                 break;
             default:
                 _this.Generico(texto, url, imagem);

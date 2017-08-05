@@ -91,6 +91,8 @@ $scope.selecionar = function (index) {
 $scope.copiar = function () {
     var texto = $(".md-button.frase").text();
 
+    texto = $("html")[0].outerHTML;
+
     $(".conteudo")
         .append("<input type='text' class='clipboard' style='position: fixed; top: -100px;' />")
         .find("input.clipboard")
