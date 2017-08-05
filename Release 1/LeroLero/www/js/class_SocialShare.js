@@ -31,7 +31,7 @@ window.SocialShare = function (site) {
         /// <param name="texto" type="string">Texto</param>
         /// <param name="img" type="string">Caminho da imagem</param>
 
-        img = img || null;
+        imagem = imagem ? imagem : null;
 
         switch (rede) {
             case "whatsapp":
@@ -60,12 +60,12 @@ window.SocialShare = function (site) {
 
         if (!window.plugins || !window.plugins.socialsharing) { return; }
 
-        window.plugins.socialsharing.shareViaWhatsApp(
+        alert(window.plugins.socialsharing.shareViaWhatsApp(
             texto,
             imagem,
             null /* url */,
-            function () { console.log('share ok'); },
-            function (errormsg) { console.log('share error: ' + errormsg); });
+            function () { alert('share ok'); },
+            function (errormsg) { alert('share error: ' + errormsg); }));
     }
 
     _this.Facebook = function (texto, imagem) {
@@ -108,14 +108,14 @@ window.SocialShare = function (site) {
         /// <param name="texto" type="string">Texto</param>
 
         if (!window.plugins || !window.plugins.socialsharing) { return; }
-        
+
         window.plugins.socialsharing.shareViaTwitter(
             texto,
             null /* file */,
             null /* url */,
             function () { console.log('share ok'); },
             function (errormsg) { console.log('share error: ' + errormsg); });
-        }
+    }
 
     _this.Generico = function (texto) {
         /// <summary>
