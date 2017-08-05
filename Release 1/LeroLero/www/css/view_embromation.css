@@ -61,10 +61,19 @@
 .conteudo .embromation .md-button.frase.large {
     padding: 0.5em;
     line-height: 1.2em;
+    text-align: center; 
+    background-image: url(../img/bla-bla-bla-fundo.png); 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: cover;
 }
 
 .conteudo .embromation .btn-aleatorio {
     display: block;
     font-size: 2em;
     margin: 0.2em 0 -0.4em 0;
+}
+
+.conteudo .embromation img[src*='1f4a9'] {
+    cursor: pointer;
 }

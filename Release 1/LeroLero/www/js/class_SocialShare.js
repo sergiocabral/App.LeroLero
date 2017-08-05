@@ -32,26 +32,27 @@ window.SocialShare = function (site) {
         /// <param name="img" type="string">Caminho da imagem</param>
 
         imagem = imagem ? imagem : null;
+        var url = "https://play.google.com/store/apps/details?id=br.srv.cabral.discursation";
 
         switch (rede) {
             case "whatsapp":
-                _this.Whatsapp(texto, imagem);
+                _this.Whatsapp(texto, url, imagem);
                 break;
             case "facebook":
-                _this.Facebook(texto, imagem);
+                _this.Facebook(texto, url, imagem);
                 break;
             case "instagram":
-                _this.Instagram(texto, imagem);
+                _this.Instagram(texto, url, imagem);
                 break;
             case "twitter":
-                _this.Twitter(texto, imagem);
+                _this.Twitter(texto, url, imagem);
                 break;
             default:
-                _this.Generico(texto, imagem);
+                _this.Generico(texto, url, imagem);
         }
     }
 
-    _this.Whatsapp = function (texto, imagem) {
+    _this.Whatsapp = function (texto, url, imagem) {
         /// <summary>
         /// Compartilha para o Whatsapp
         /// </summary>
@@ -63,14 +64,14 @@ window.SocialShare = function (site) {
         window.plugins.socialsharing.shareViaWhatsApp(
             texto,
             imagem,
-            null /* url */,
+            url,
             function () { console.log('share ok'); },
             function (errormsg) {
                 _this.Site.Comportamento.Alerta("Eu acho que você não tem o Whatsapp instalado. Não posso fazer nada.");
             });
     }
 
-    _this.Facebook = function (texto, imagem) {
+    _this.Facebook = function (texto, url, imagem) {
         /// <summary>
         /// Compartilha para o Facebook
         /// </summary>
@@ -82,14 +83,14 @@ window.SocialShare = function (site) {
         window.plugins.socialsharing.shareViaFacebook(
             texto,
             imagem,
-            null /* url */,
+            url,
             function () { console.log('share ok'); },
             function (errormsg) {
                 _this.Site.Comportamento.Alerta("Você tem o Facebook instalado? Acho que não.");
             });
     }
 
-    _this.Instagram = function (texto, imagem) {
+    _this.Instagram = function (texto, url, imagem) {
         /// <summary>
         /// Compartilha para o Instagram
         /// </summary>
@@ -107,7 +108,7 @@ window.SocialShare = function (site) {
             });
     }
 
-    _this.Twitter = function (texto, imagem) {
+    _this.Twitter = function (texto, url, imagem) {
         /// <summary>
         /// Compartilha para o Whatsapp
         /// </summary>
@@ -118,14 +119,14 @@ window.SocialShare = function (site) {
         window.plugins.socialsharing.shareViaTwitter(
             texto,
             imagem,
-            null /* url */,
+            url,
             function () { console.log('share ok'); },
             function (errormsg) {
                 _this.Site.Comportamento.Alerta("Você nem tem o Twitter instalado. Não posso ajudar dessa vez.");
             });
     }
 
-    _this.Generico = function (texto, imagem) {
+    _this.Generico = function (texto, url, imagem) {
         /// <summary>
         /// Compartilha como texto para o android
         /// </summary>
@@ -135,9 +136,9 @@ window.SocialShare = function (site) {
 
         window.plugins.socialsharing.share(
             texto,
-            null /* subject */,
+            "Gerador de Lero Lero",
             imagem,
-            null /* url */,
+            url,
             function () { console.log('share ok'); },
             function (errormsg) {
                 _this.Site.Comportamento.Alerta("Ops! Alguma coisa deu errado. Não consegui compartilhar.");

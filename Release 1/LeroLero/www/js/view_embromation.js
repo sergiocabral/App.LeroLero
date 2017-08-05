@@ -154,3 +154,22 @@ $scope.compartilhar = function (rede) {
     }
     fResize();
 }
+
+var fPiscaAleatorio = function () {
+    if (window.intervalfPiscaAleatorio) { return; }
+
+    window.intervalfPiscaAleatorio = setInterval(function () {
+        var objs = $("img[src*=1f4a9]:visible");
+
+        if (objs.length > 0) {
+            objs.animate({ "opacity": "0.5" }, 500, function () {
+                objs.animate({ "opacity": "1" }, 500);
+            });
+        }
+        else {
+            clearInterval(window.intervalfPiscaAleatorio);
+            window.intervalfPiscaAleatorio = 0;
+        }
+    }, 1500);
+}
+fPiscaAleatorio();
