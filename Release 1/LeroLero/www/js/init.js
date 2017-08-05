@@ -130,6 +130,7 @@ carregarArquivo([
     "js/class_Cordova.js",
     "js/class_Comportamento.js",
     "js/class_Angular.js",
+    "js/class_Monetizar.js",
 
 ], function () {
 

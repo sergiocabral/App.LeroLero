@@ -29,9 +29,11 @@ window.Site = function () {
     _this.Cordova = window.Cordova = new Cordova(_this);
     _this.Comportamento = window.Comportamento = new Comportamento(_this);
     _this.Angular = window.Angular = new Angular(_this);
+    _this.Site.Monetizar = window.Monetizar = new Monetizar(_this);
 
     _this.Site.Cordova.AtribuirEventos();
     _this.Angular.Inicializar();
     _this.Site.Comportamento.Splash(false);
+    _this.Site.Monetizar.ConfigurarAdMob();
 
 };

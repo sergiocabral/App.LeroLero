@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "61a9dbfd-d0d5-4ea0-991f-be63f4731473",
-      "lastModifiedDate": 1501813608561,
+      "lastModifiedDate": 1501908505804,
       "creationDate": 1501366114187
     },
     "sourceDirectory": "www",
@@ -15,7 +15,84 @@
     "libraries": [],
     "serviceMethods": [],
     "cordovaPluginsDirectory": "plugins",
-    "cordovaPlugins": [],
+    "cordovaPlugins": [
+      {
+        "id": "cordova-plugin-x-socialsharing",
+        "name": "SocialSharing",
+        "version": "5.1.7",
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-x-socialsharing",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-x-socialsharing",
+        "selectedState": "Included",
+        "checksum": "fe71eca",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "author": "Eddy Verbruggen",
+        "permissions": {
+          "android:name": [
+            "android.permission.WRITE_EXTERNAL_STORAGE"
+          ]
+        },
+        "description": "\n    Share text, images (and other files), or a link via the native sharing widget of your device.\n    Android is fully supported, as well as iOS 6 and up. WP8 has somewhat limited support.\n  ",
+        "data": {},
+        "dependedBy": []
+      },
+      {
+        "id": "cordova-admobsdk",
+        "name": "Google Mobile Ads SDK for Cordova",
+        "version": "1.0.4",
+        "originType": "cordova.io",
+        "origin": "cordova-admobsdk",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-admobsdk",
+        "selectedState": "Included",
+        "checksum": "4bc7c2ec",
+        "dependsOn": [],
+        "topLevel": false,
+        "cordovaVersion": ">=3.0",
+        "author": "Google",
+        "permissions": {},
+        "description": "Adds Google Mobile Ads SDK to Cordova projects, as dependency for other plugins",
+        "data": {},
+        "dependedBy": [
+          "cordova-plugin-admob"
+        ],
+        "custom": "true"
+      },
+      {
+        "id": "cordova-plugin-admob",
+        "name": "Cordova-Phonegap AdMob Plugin",
+        "version": "3.2.4",
+        "originType": "repo",
+        "origin": "https://github.com/floatinghotpot/cordova-plugin-admob",
+        "gitref": "",
+        "subdir": ".",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-admob",
+        "selectedState": "Included",
+        "checksum": "cad5b759",
+        "dependsOn": [
+          "cordova-admobsdk"
+        ],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0",
+        "author": "Raymond Xie",
+        "permissions": {
+          "android:name": [
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+          ]
+        },
+        "description": "The FASTEST and EASIEST TO USE Cordova Admob plugin for Android, iOS and Windows phone. Pure OpenSource. Allows preloading and automatic loading of interstitials and banners plus more. Works with Cordova, Phonegap, Intel XDK/Crosswalk, Ionic, Meteor and more.",
+        "data": {},
+        "dependedBy": [],
+        "custom": "true"
+      }
+    ],
     "buildConfigurations": {
       "Android": {
         "platform_": "android",

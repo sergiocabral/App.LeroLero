@@ -316,5 +316,11 @@
     "inputFiles": [
       "css/view_embromation.css"
     ]
+  },
+  {
+    "outputFileName": "js/class_Monetizar.min.js",
+    "inputFiles": [
+      "js/class_Monetizar.js"
+    ]
   }
 ]

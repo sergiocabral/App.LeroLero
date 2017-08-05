@@ -14,3 +14,12 @@
     text-align: center;
     margin: 1em 10%;
 }
+
+.conteudo .inicio .abaixo {
+    font-size: 80%;
+}
+
+.conteudo .inicio .desculpe {
+    font-size: 80%;
+    color: gray;
+}
