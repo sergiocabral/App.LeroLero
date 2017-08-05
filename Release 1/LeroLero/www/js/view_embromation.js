@@ -138,14 +138,14 @@ $scope.compartilhar = function (rede) {
             html2canvas(obj[0], {
                 onrendered: function (canvas) {
                     obj.remove();
-                    alert(canvas);
                     window.canvas2ImagePlugin.saveImageDataToLibrary(
-                        function (msg) {
-                            alert(msg);
+                        function (file) {
+                            file = "file://" + file;
+                            alert(file);
                             Site.SocialShare.Compartilhar(rede, texto, imagem)
                         },
                         function (err) {
-                            alert(err);
+                            console.log(err);
                         },
                         canvas);
                     $scope.compartilhar_processando = false;
