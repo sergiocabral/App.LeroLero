@@ -91,18 +91,14 @@ $scope.selecionar = function (index) {
 $scope.copiar = function () {
     var texto = $(".md-button.frase").text();
 
-    if (Site.Cordova.Ativo()) {
-        Site.Cordova.AreaDeTransferencia(texto);
-    }
-    else {
-        $(".conteudo")
-            .append("<input type='text' class='clipboard' style='position: fixed; top: -100px;' />")
-            .find("input.clipboard")
-            .val(texto)
-            .select()
-            .focus();
-        document.execCommand("copy");
-    }    
+    $(".conteudo")
+        .append("<input type='text' class='clipboard' style='position: fixed; top: -100px;' />")
+        .find("input.clipboard")
+        .val(texto)
+        .select()
+        .focus();
+    document.execCommand("copy");
+    Site.SocialShare.Compartilhar("instagram", texto);
 
     $(".conteudo input.clipboard").remove();
     $(".conteudo .final p > span").animate({ "opacity": "1" });
@@ -121,6 +117,8 @@ $scope.compartilhar = function (rede) {
     alert(texto);
     html2canvas($(".md-button.frase")[0], {
         onrendered: function (canvas) {
+            alert("onrendered");
+            alert(canvas);
             imagem = canvas.toDataURL('image/png');
             alert(imagem.length);
             Site.SocialShare.Compartilhar(rede, texto, imagem);

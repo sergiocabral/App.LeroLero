@@ -31,12 +31,12 @@
 }
 
 .conteudo .embromation .final .compartilhar i {
-    font-size: 150%;
+    font-size: 180%;
     background-color: #6493E3;
     color: white;
     padding: 6px 10px;
     border-radius: 0.2em;
-    margin: 5px;
+    margin: 5px 15px;
     cursor: pointer;
     opacity: 0.6;
 }
