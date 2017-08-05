@@ -64,8 +64,8 @@ window.SocialShare = function (site) {
             texto,
             imagem,
             null /* url */,
-            function () { _this.Site.Compoartamento.Alerta('share ok'); },
-            function (errormsg) { _this.Site.Compoartamento.Alerta('share error: ' + errormsg); });
+            function () { console.log('share ok'); },
+            function (errormsg) { console.log('share error: ' + errormsg); });
     }
 
     _this.Facebook = function (texto, imagem) {
@@ -81,8 +81,8 @@ window.SocialShare = function (site) {
             texto,
             imagem,
             null /* url */,
-            function () { _this.Site.Compoartamento.Alerta('share ok'); },
-            function (errormsg) { _this.Site.Compoartamento.Alerta('share error: ' + errormsg); });
+            function () { console.log('share ok'); },
+            function (errormsg) { console.log('share error: ' + errormsg); });
     }
 
     _this.Instagram = function (texto, imagem) {
@@ -97,8 +97,8 @@ window.SocialShare = function (site) {
         window.plugins.socialsharing.shareViaInstagram(
             texto,
             imagem,
-            function () { _this.Site.Compoartamento.Alerta('share ok'); },
-            function (errormsg) { _this.Site.Compoartamento.Alerta('share error: ' + errormsg); });
+            function () { console.log('share ok'); },
+            function (errormsg) { console.log('share error: ' + errormsg); });
     }
 
     _this.Twitter = function (texto) {
@@ -113,8 +113,8 @@ window.SocialShare = function (site) {
             texto,
             null /* file */,
             null /* url */,
-            function () { _this.Site.Compoartamento.Alerta('share ok'); },
-            function (errormsg) { _this.Site.Compoartamento.Alerta('share error: ' + errormsg); });
+            function () { console.log('share ok'); },
+            function (errormsg) { console.log('share error: ' + errormsg); });
         }
 
     _this.Generico = function (texto) {
@@ -130,8 +130,8 @@ window.SocialShare = function (site) {
             null /* subject */,
             null /* fileOrFileArray */,
             null /* url */,
-            function () { _this.Site.Compoartamento.Alerta('share ok'); },
-            function (errormsg) { _this.Site.Compoartamento.Alerta('share error: ' + errormsg); });
+            function () { console.log('share ok'); },
+            function (errormsg) { console.log('share error: ' + errormsg); });
     }
 
 };
