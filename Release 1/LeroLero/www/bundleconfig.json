@@ -322,5 +322,17 @@
     "inputFiles": [
       "js/class_Monetizar.js"
     ]
+  },
+  {
+    "outputFileName": "plugins/font-awesome/font-awesome.min.css",
+    "inputFiles": [
+      "plugins/font-awesome/font-awesome.css"
+    ]
+  },
+  {
+    "outputFileName": "js/class_SocialShare.min.js",
+    "inputFiles": [
+      "js/class_SocialShare.js"
+    ]
   }
 ]

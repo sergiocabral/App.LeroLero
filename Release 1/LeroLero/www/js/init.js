@@ -117,6 +117,9 @@ carregarArquivo([
     "plugins/angular_material/angular-material.js",
     "plugins/angular_material/material-icons.css",
 
+    //Framework: Font Awesome
+    "plugins/font-awesome/font-awesome.css",
+
     //Framework: emoji
     "plugins/emoji/emoji.js",
 
@@ -131,6 +134,7 @@ carregarArquivo([
     "js/class_Comportamento.js",
     "js/class_Angular.js",
     "js/class_Monetizar.js",
+    "js/class_SocialShare.js",
 
 ], function () {
 

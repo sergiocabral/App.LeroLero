@@ -12,10 +12,17 @@
     </div>
     <div class="final" style="display: {{finalDisplay}}">
         <p>
-            <emoji>boxpointup</emoji> &nbsp; clique para copiar &nbsp; <emoji>boxpointup</emoji>
+            clique <emoji>boxpointup</emoji> para copiar, ou clique <emoji>boxpointdown</emoji> para compartilhar
             <span><br/>copiado para área de transferência</span>
+            <div class="compartilhar">
+                <i class="fa fa-share-alt" aria-hidden="true" ng-click="compartilhar()"></i>
+                <i class="fa fa-whatsapp" aria-hidden="true" ng-click="compartilhar('whatsapp')"></i>
+                <i class="fa fa-facebook-official" aria-hidden="true" ng-click="compartilhar('facebook')"></i>
+                <i class="fa fa-instagram" aria-hidden="true" ng-click="compartilhar('instagram')"></i>
+                <i class="fa fa-twitter" aria-hidden="true" ng-click="compartilhar('twitter')"></i>
+            </div>
         </p>
-        <md-button class="md-raised md-accent large" ng-href="#!/embromation">Voltar</md-button>
+        <md-button class="md-raised md-accent large" ng-href="#!/embromation">De novo!</md-button>
     </div>
     <p style="display: {{infoDisplay}}">Clique aqui na <s>bosta</s> <emoji ng-click="randomico()">poo</emoji> para uma frase aleatória.<br /><br /></p>
 

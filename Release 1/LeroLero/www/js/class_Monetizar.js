@@ -31,13 +31,10 @@ window.Monetizar = function (site) {
         var fInitAdMob = function () {
             /*
              * ID do aplicativo: ca-app-pub-3448596400517567~3836463344
-             * ID do bloco de anúncios: ca-app-pub-3448596400517567/5939882508
-             * Modelo de anúncio nativo: M002
-             * Largura: 280 a 1200 dp
-             * Altura: 132 a 1200 dp
+             * ID do bloco de anúncios: ca-app-pub-3448596400517567/8533901035
              */
-            var admob_key_banner = "ca-app-pub-3448596400517567/5939882508";
-            var admob_key_interstitial = "ca-app-pub-3448596400517567/5939882508";
+            var admob_key_banner = "ca-app-pub-3448596400517567/8533901035";
+            var admob_key_interstitial = "ca-app-pub-3448596400517567/8533901035";
             window.plugins.AdMob.setOptions({
                 publisherId: admob_key_banner,
                 bannerAtTop: false, // set to true, to put banner at top
@@ -45,7 +42,7 @@ window.Monetizar = function (site) {
                 offsetTopBar: true, // set to true to avoid ios7 status bar overlap                    
                 interstitialAdId: admob_key_interstitial,
                 autoShow: true, // autoshow intertitial Ad
-                isTesting: true // receiving test ad
+                isTesting: false // receiving test ad
             });
         }
 
@@ -59,7 +56,7 @@ window.Monetizar = function (site) {
 
         var fConfigurar = function () {
             if (!window.plugins || !window.plugins.AdMob) {
-                alert("AdMob plugin not ready");
+                //alert("AdMob plugin not ready");
                 return;
             }
 

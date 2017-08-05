@@ -109,4 +109,17 @@ window.Cordova = function (site) {
         navigator.app.loadUrl(url, dados);
     }
 
+    _this.AreaDeTransferencia = function (texto) {
+        /// <summary>
+        /// Copia um texto para área de transferência.
+        /// </summary>
+        /// <param name="texto" type="string"></param>
+
+        if (!window.intel || !window.intel.xdk || !window.intel.xdk.device) { return; }
+
+        document.addEventListener("intel.xdk.device.ready", function () {
+            alert("copy: " + window.intel.xdk.device.copyToClipboard(texto));
+        }, false);
+    }
+
 };

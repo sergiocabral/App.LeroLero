@@ -26,6 +26,20 @@
     margin-top: 1.6em;
 }
 
+.conteudo .embromation .final .compartilhar {
+    margin-top: 2em;
+}
+
+.conteudo .embromation .final .compartilhar i {
+    font-size: 200%;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    padding: 6px 10px;
+    border-radius: 0.2em;
+    margin: 5px;
+    cursor: pointer;
+}
+
 .conteudo .embromation sub {
     font-size: 80%;
     opacity: 0.5;

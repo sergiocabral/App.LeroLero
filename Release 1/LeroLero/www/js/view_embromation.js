@@ -89,16 +89,20 @@ $scope.selecionar = function (index) {
 }
 
 $scope.copiar = function () {
+    var texto = $(".md-button.frase").text();
+
     $(".conteudo")
         .append("<input type='text' class='clipboard' style='position: fixed; top: -100px;' />")
         .find("input.clipboard")
-        .val($(".md-button.frase").text())
+        .val(texto)
         .select()
         .focus();
     document.execCommand("copy");
     $(".conteudo input.clipboard").remove();
     $(".conteudo .final p > span").animate({ "opacity": "1" });
     setTimeout(function () { $(".conteudo .final p > span").animate({ "opacity": "0" }); }, 2000);
+
+    Site.Cordova.AreaDeTransferencia(texto);
 }
 
 $scope.randomico = function () {
@@ -106,4 +110,9 @@ $scope.randomico = function () {
         $rootScope.partesSelecionadas[i] = Site.Util.NumeroAleatorio($scope.frases[i].length - 1);
     }
     $window.location.href = "#!/embromation#5";
+}
+
+$scope.compartilhar = function (rede) {
+    var texto = $(".md-button.frase").text();
+    Site.SocialShare.Compartilhar(rede, texto);
 }
