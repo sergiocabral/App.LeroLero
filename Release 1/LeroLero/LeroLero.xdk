@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "61a9dbfd-d0d5-4ea0-991f-be63f4731473",
-      "lastModifiedDate": 1501914462589,
+      "lastModifiedDate": 1501921691110,
       "creationDate": 1501366114187
     },
     "sourceDirectory": "www",
@@ -88,6 +88,32 @@
           ]
         },
         "description": "The FASTEST and EASIEST TO USE Cordova Admob plugin for Android, iOS and Windows phone. Pure OpenSource. Allows preloading and automatic loading of interstitials and banners plus more. Works with Cordova, Phonegap, Intel XDK/Crosswalk, Ionic, Meteor and more.",
+        "data": {},
+        "dependedBy": [],
+        "custom": "true"
+      },
+      {
+        "id": "org.devgeeks.Canvas2ImagePlugin",
+        "name": "Canvas 2 Image",
+        "version": "0.6.0",
+        "originType": "repo",
+        "origin": "https://github.com/devgeeks/Canvas2ImagePlugin",
+        "gitref": "",
+        "subdir": ".",
+        "paramvals": {},
+        "sourceLocation": "plugins/org.devgeeks.Canvas2ImagePlugin",
+        "selectedState": "Included",
+        "checksum": "a0434479",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "author": "Tommy-Carlos Williams - tommy@devgeeks.org",
+        "permissions": {
+          "android:name": [
+            "android.permission.WRITE_EXTERNAL_STORAGE"
+          ]
+        },
+        "description": "This plugin allows you to save the contents of an HTML canvas tag to the iOS Photo Library, or Android Gallery from your app.",
         "data": {},
         "dependedBy": [],
         "custom": "true"

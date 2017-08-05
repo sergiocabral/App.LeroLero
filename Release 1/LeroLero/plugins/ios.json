@@ -12,6 +12,9 @@
         },
         "cordova-plugin-admob": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "org.devgeeks.Canvas2ImagePlugin": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {
