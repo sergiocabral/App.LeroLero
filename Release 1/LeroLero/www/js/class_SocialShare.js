@@ -31,11 +31,11 @@ window.SocialShare = function (site) {
         /// <param name="texto" type="string">Texto</param>
         /// <param name="img" type="string">Caminho da imagem</param>
 
-        imagem = imagem ? imagem : null;
-
         alert("rede: " + rede);
         alert("texto: " + texto);
         alert("imagem: " + imagem);
+
+        imagem = imagem ? imagem : null;
 
         switch (rede) {
             case "whatsapp":
