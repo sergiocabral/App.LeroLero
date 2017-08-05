@@ -98,7 +98,7 @@ $scope.copiar = function () {
         .select()
         .focus();
     document.execCommand("copy");
-    Site.SocialShare.Compartilhar("instagram", texto);
+    Site.SocialShare.Compartilhar("instagram", texto); //Funciona como CTRL+C
 
     $(".conteudo input.clipboard").remove();
     $(".conteudo .final p > span").animate({ "opacity": "1" });
@@ -112,16 +112,46 @@ $scope.randomico = function () {
     $window.location.href = "#!/embromation#5";
 }
 
+$scope.compartilhar_processando = false;
 $scope.compartilhar = function (rede) {
-    var texto = $(".md-button.frase").text();
-    alert(texto);
-    html2canvas($(".md-button.frase")[0], {
-        onrendered: function (canvas) {
-            alert("onrendered");
-            alert(canvas);
-            imagem = canvas.toDataURL('image/png');
-            alert(imagem.length);
-            Site.SocialShare.Compartilhar(rede, texto, imagem);
+    if ($scope.compartilhar_processando) { return; }
+    $scope.compartilhar_processando = true;
+
+    $("body").append($(".md-button.frase")[0].outerHTML.replace("visibility", "z-index: -1000; padding: 5px; text-align: center;" + "visibility"));
+    var obj = $("body > .md-button.frase");
+    var texto = obj.text();
+    if (obj.height() < 300) {
+        obj.height(300);
+    }
+    if (obj.height() < obj.width()) {
+        var bkp = obj.width();
+        obj.width(obj.height());
+        obj.height(bkp);
+    }
+
+    var fResize = function () {
+        if (obj.height() > obj.width()) {
+            obj.height(obj.height() - 10);
+            setTimeout(fResize, 1);
         }
-    });    
+        else {
+            html2canvas(obj[0], {
+                onrendered: function (canvas) {
+                    obj.remove();
+                    alert(canvas);
+                    window.canvas2ImagePlugin.saveImageDataToLibrary(
+                        function (msg) {
+                            alert(msg);
+                            Site.SocialShare.Compartilhar(rede, texto, imagem)
+                        },
+                        function (err) {
+                            alert(err);
+                        },
+                        canvas);
+                    $scope.compartilhar_processando = false;
+                }
+            });
+        }
+    }
+    fResize();
 }
