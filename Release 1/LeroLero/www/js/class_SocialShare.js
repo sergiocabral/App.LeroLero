@@ -31,10 +31,6 @@ window.SocialShare = function (site) {
         /// <param name="texto" type="string">Texto</param>
         /// <param name="img" type="string">Caminho da imagem</param>
 
-        alert("rede: " + rede);
-        alert("texto: " + texto);
-        alert("imagem: " + imagem);
-
         imagem = imagem ? imagem : null;
 
         switch (rede) {
@@ -61,16 +57,15 @@ window.SocialShare = function (site) {
         /// </summary>
         /// <param name="texto" type="string">Texto</param>
         /// <param name="imagem" type="string">Caminho da imagem</param>
-        alert(1);
-        if (!window.plugins || !window.plugins.socialsharing) { return; }
-        alert(2);
 
-        alert(window.plugins.socialsharing.shareViaWhatsApp(
+        if (!window.plugins || !window.plugins.socialsharing) { return; }
+
+        window.plugins.socialsharing.shareViaWhatsApp(
             texto,
             imagem,
             null /* url */,
-            function () { alert('share ok'); },
-            function (errormsg) { alert('share error: ' + errormsg); }));
+            function () { console.log('share ok'); },
+            function (errormsg) { console.log('share error: ' + errormsg); });
     }
 
     _this.Facebook = function (texto, imagem) {
