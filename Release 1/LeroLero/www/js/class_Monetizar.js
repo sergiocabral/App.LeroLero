@@ -61,8 +61,10 @@ window.Monetizar = function (site) {
             }
 
             fInitAdMob();
-            fShowAdMobInterstitial();
-            fShowAdMobBanner();
+            setTimeout(function () {
+                fShowAdMobInterstitial();
+                fShowAdMobBanner();
+            }, 5000);
         };
 
         if (_this.Site.Cordova.Ativo()) {
