@@ -117,6 +117,9 @@ carregarArquivo([
     "plugins/angular_material/angular-material.js",
     "plugins/angular_material/material-icons.css",
 
+    //Framework: html2canvas
+    "plugins/html2canvas/html2canvas.js",
+
     //Framework: Font Awesome
     "plugins/font-awesome/font-awesome.css",
 
