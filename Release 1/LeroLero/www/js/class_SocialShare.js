@@ -23,7 +23,7 @@ window.SocialShare = function (site) {
     //##################################################
     //Código específico a partir daqui.
 
-    _this.Compartilhar = function (rede, texto, img) {
+    _this.Compartilhar = function (rede, texto, imagem) {
         /// <summary>
         /// Compartilha um texto e imagem para uma rede social.
         /// </summary>
@@ -35,19 +35,19 @@ window.SocialShare = function (site) {
 
         switch (rede) {
             case "whatsapp":
-                _this.Whatsapp(texto);
+                _this.Whatsapp(texto, imagem);
                 break;
             case "facebook":
-                _this.Facebook(texto);
+                _this.Facebook(texto, imagem);
                 break;
             case "instagram":
-                _this.Instagram(texto);
+                _this.Instagram(texto, imagem);
                 break;
             case "twitter":
-                _this.Twitter(texto);
+                _this.Twitter(texto, imagem);
                 break;
             default:
-                _this.Generico(texto);
+                _this.Generico(texto, imagem);
         }
     }
 

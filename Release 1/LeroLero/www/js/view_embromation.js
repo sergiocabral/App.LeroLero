@@ -114,5 +114,10 @@ $scope.randomico = function () {
 
 $scope.compartilhar = function (rede) {
     var texto = $(".md-button.frase").text();
-    Site.SocialShare.Compartilhar(rede, texto);
+    html2canvas($(".md-button.frase")[0], {
+        onrendered: function (canvas) {
+            imagem = canvas.toDataURL('image/png');
+            Site.SocialShare.Compartilhar(rede, texto, imagem);
+        }
+    });    
 }
