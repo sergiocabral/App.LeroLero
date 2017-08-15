@@ -111,14 +111,14 @@ var fPiscaAleatorio = function () {
         var objs = $("img[src*=1f4a9]:visible");
 
         if (objs.length > 0) {
-            objs.animate({ "opacity": "0.5" }, 500, function () {
-                objs.animate({ "opacity": "1" }, 500);
+            objs.animate({ "opacity": "0.5" }, 250, function () {
+                objs.animate({ "opacity": "1" }, 250);
             });
         }
         else {
             clearInterval(window.intervalfPiscaAleatorio);
             window.intervalfPiscaAleatorio = 0;
         }
-    }, 1500);
+    }, 1000);
 }
 fPiscaAleatorio();
