@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "61a9dbfd-d0d5-4ea0-991f-be63f4731473",
-      "lastModifiedDate": 1501931973287,
+      "lastModifiedDate": 1502764240350,
       "creationDate": 1501366114187
     },
     "sourceDirectory": "www",
@@ -235,8 +235,8 @@
         ],
         "addlPermissions_": "android.permission.WRITE_EXTERNAL_STORAGE",
         "excludedLibraries_": "",
-        "appVersion_": "5",
-        "appVersionCode_": "5",
+        "appVersion_": "6",
+        "appVersionCode_": "6",
         "appDescription_": "Gerador de Lero Lero. Fale tudo sem falar nada.",
         "appAuthor_": "sergio@cabral.br.com",
         "signed_": true
