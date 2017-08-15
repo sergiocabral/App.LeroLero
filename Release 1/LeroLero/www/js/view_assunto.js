@@ -7,12 +7,12 @@ $scope.assuntos = [
     {
         titulo: "Business",
         descricao: "Reunião de negócios na empresa com presença da diretoria, gerentes, coordenadores, etc.",
-        arquivo: "/frases/negocios.js"
+        arquivo: "frases/negocios.js"
     },
     {
         titulo: "Informática",
         descricao: "Departamento de informática, incluindo desenvolvimento, apoio ao usuário, infraestrutura, etc. Tipo o pessoal do Edinc Macaé.",
-        arquivo: "/frases/informatica.js"
+        arquivo: "frases/informatica.js"
     }
 ];
 
