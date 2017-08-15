@@ -44,7 +44,7 @@
         'do pacote de aplicativos que a Microsoft oferece.',
         'dos envolvidos nos testes de usabilidade do sistema.',
         'da configuração do sistema entregue.',
-        'do contante uso do aplicativo atualmente em homologação.',
+        'do constante uso do aplicativo atualmente em homologação.',
         'da abordagem adotada pela equipe de design.',
     ],
 ];
