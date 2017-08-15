@@ -6,12 +6,12 @@ var $window = Site.Angular.ConteudoControllerContext.$window;
 $scope.assuntos = [
     {
         titulo: "Business",
-        descricao: "Reunião de negócios na empresa com pessoal em altos cargos.",
+        descricao: "Reunião de negócios na empresa com presença da diretoria, gerentes, coordenadores, etc.",
         arquivo: "/frases/negocios.js"
     },
     {
         titulo: "Informática",
-        descricao: "Departamento de informática, incluindo desenvolvimento, apoio ao usuário, infraestrutura, etc.",
+        descricao: "Departamento de informática, incluindo desenvolvimento, apoio ao usuário, infraestrutura, etc. Tipo o pessoal do Edinc Macaé.",
         arquivo: "/frases/informatica.js"
     }
 ];
