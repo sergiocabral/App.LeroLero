@@ -340,5 +340,47 @@
     "inputFiles": [
       "plugins/html2canvas/html2canvas.js"
     ]
+  },
+  {
+    "outputFileName": "css/view_assunto.min.css",
+    "inputFiles": [
+      "css/view_assunto.css"
+    ]
+  },
+  {
+    "outputFileName": "html/view_assunto.min.html",
+    "inputFiles": [
+      "html/view_assunto.html"
+    ]
+  },
+  {
+    "outputFileName": "js/view_assunto.min.js",
+    "inputFiles": [
+      "js/view_assunto.js"
+    ]
+  },
+  {
+    "outputFileName": "frases/00001.min.js",
+    "inputFiles": [
+      "frases/00001.js"
+    ]
+  },
+  {
+    "outputFileName": "frases/00002.min.js",
+    "inputFiles": [
+      "frases/00002.js"
+    ]
+  },
+  {
+    "outputFileName": "frases/informatica.min.js",
+    "inputFiles": [
+      "frases/informatica.js"
+    ]
+  },
+  {
+    "outputFileName": "frases/negocios.min.js",
+    "inputFiles": [
+      "frases/negocios.js"
+    ]
   }
 ]

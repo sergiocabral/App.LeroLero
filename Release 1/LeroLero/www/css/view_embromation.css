@@ -2,6 +2,13 @@
     text-align: center;
 }
 
+.conteudo .embromation h6 a {
+    font-family: 'Fredoka One';
+    text-transform: uppercase;
+    color: gray;
+    font-weight: normal;
+}
+
 .conteudo .embromation p {
     text-align: center;
     margin: 1em 10% -34px 10%;
