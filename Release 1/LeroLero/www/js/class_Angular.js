@@ -258,6 +258,7 @@ window.Angular = function (site) {
 
         $routeProvider
 			.when('/inicio', fWhenConfig("inicio"))
+			.when('/assunto', fWhenConfig("assunto"))
 			.when('/embromation', fWhenConfig("embromation"))
 			.when('/sobre', fWhenConfig("sobre"))
             .otherwise({ redirectTo: '/inicio' });

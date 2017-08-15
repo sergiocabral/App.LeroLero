@@ -1,0 +1,19 @@
+﻿<div class="assunto">
+    <h1>Qual assunto?</h1>
+    <p>
+        Embromation para qualquer grupo de pessoas.
+        Aos poucos vai chegando mais. <emoji>cool</emoji>
+        Escolhe um aí... 
+    </p>
+    <md-card ng-repeat="assunto in assuntos">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{assunto.titulo}}</span>
+                <span class="md-subhead">{{assunto.descricao}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="selecionar($index);"><emoji>greentick</emoji></md-button>
+        </md-card-actions>
+    </md-card>
+</div>

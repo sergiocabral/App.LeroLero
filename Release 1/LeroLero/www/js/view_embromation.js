@@ -3,57 +3,6 @@ var $location = Site.Angular.ConteudoControllerContext.$location;
 var $rootScope = Site.Angular.ConteudoControllerContext.$rootScope;
 var $window = Site.Angular.ConteudoControllerContext.$window;
 
-$scope.frases = [
-    [
-        'Caros colegas,',
-        'Por outro lado,',
-        'Não podemos esquecer que',
-        'Do mesmo modo,',
-        'A prática mostra que',
-        'Nunca é demais insistir que',
-        'A experiência mostra que',
-        'É fundamental ressaltar que',
-        'O incentivo ao avanço tecnológico, assim como',
-        'Assim como'
-    ],
-    [
-        'a execução deste projeto',
-        'a complexidade dos estudos efetuados',
-        'a atual estrutura de organização',
-        'o novo modelo estrutural aqui preconizado',
-        'o desenvolvimento de formas distintas de atuação',
-        'a constante divulgação das informações',
-        'a consolidação das estruturas',
-        'a análise dos diversos resultados',
-        'o início do programa de formação de atitudes',
-        'a expansão de nossa atividade'
-    ],
-    [
-        'nos obriga à análise',
-        'cumpre um papel essencial na formulação',
-        'auxilia a preparação e a estruturação',
-        'contribui para a correta determinação',
-        'assume importantes posições na definição',
-        'facilita a definição',
-        'prejudica a percepção da importância',
-        'oferece uma boa oportunidade de verificação',
-        'acarreta um processo de reformulação',
-        'exige precisão e definição'
-    ],
-    [
-        'das nossas opções de desenvolvimento futuro.',
-        'das nossas metas financeiras e administrativas.',
-        'das atitudes e das atribuições da diretoria.',
-        'das novas proposições.',
-        'das opções básicas para o sucesso do programa.',
-        'do nosso sistema de formação de quadros.',
-        'das condições apropriadas para os negócios.',
-        'dos índices pretendidos.',
-        'das formas de ação.',
-        'dos conceitos de participação geral.'
-    ],
-];
-
 $scope.grupo = parseInt($location.hash());
 $scope.grupo = (isNaN($scope.grupo) ? 1 : $scope.grupo) - 1;
 $rootScope.partesSelecionadas = $rootScope.partesSelecionadas || [];
@@ -67,13 +16,13 @@ $scope.aleatorioClass = $scope.grupo == 4 ? 'btn-aleatorio' : '';
 $scope.fraseAtual = function (e) {
     var frase = "";
     for (var i = 0; i < $scope.grupo; i++) {
-        frase += " " + $scope.frases[i][$rootScope.partesSelecionadas[i]];
+        frase += " " + $rootScope.frases[i][$rootScope.partesSelecionadas[i]];
     }
     return frase.trim();
 }
 
 $scope.partes = function () {
-    var partes = $scope.frases[$scope.grupo];
+    var partes = $rootScope.frases[$scope.grupo];
     if (partes) {
         $(".ng-enter .md-button.frase").removeClass("large");
     }
@@ -106,8 +55,8 @@ $scope.copiar = function () {
 }
 
 $scope.randomico = function () {
-    for (var i = 0; i < $scope.frases.length; i++) {
-        $rootScope.partesSelecionadas[i] = Site.Util.NumeroAleatorio($scope.frases[i].length - 1);
+    for (var i = 0; i < $rootScope.frases.length; i++) {
+        $rootScope.partesSelecionadas[i] = Site.Util.NumeroAleatorio($rootScope.frases[i].length - 1);
     }
     $window.location.href = "#!/embromation#5";
 }
