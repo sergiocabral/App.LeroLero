@@ -19,6 +19,11 @@ $scope.assuntos = [
         descricao: "Pra muita gente ser bandido virou trabalho e o pessoal tem que se especializar na linguagem. Taí a solução pro bandido do dia-a-dia.",
         arquivo: "frases/bandido.js"
     },
+    {
+        titulo: "Vitima do bandido",
+        descricao: "Mas temos a solução pra você saber desenrolar com o bandido e sair bem dessa história. Com o Lero Lero pro dia-a-dia do Rio de Janeiro.",
+        arquivo: "frases/vitima.js"
+    },
 ];
 
 $(document).ready(function () { emoji(); });

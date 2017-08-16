@@ -388,5 +388,11 @@
     "inputFiles": [
       "frases/bandido.js"
     ]
+  },
+  {
+    "outputFileName": "frases/vitima.min.js",
+    "inputFiles": [
+      "frases/vitima.js"
+    ]
   }
 ]
