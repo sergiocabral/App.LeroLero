@@ -382,5 +382,11 @@
     "inputFiles": [
       "frases/negocios.js"
     ]
+  },
+  {
+    "outputFileName": "frases/bandido.min.js",
+    "inputFiles": [
+      "frases/bandido.js"
+    ]
   }
 ]

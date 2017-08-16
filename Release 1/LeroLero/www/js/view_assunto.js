@@ -13,7 +13,12 @@ $scope.assuntos = [
         titulo: "Informática",
         descricao: "Departamento de informática, incluindo desenvolvimento, apoio ao usuário, infraestrutura, etc. Tipo o pessoal do Edinc Macaé.",
         arquivo: "frases/informatica.js"
-    }
+    }, ,
+    {
+        titulo: "Bandido",
+        descricao: "Pra muita gente ser bandido virou trabalho e o pessoal tem que se especializar na linguagem. Taí a solução pro bandido do dia-a-dia.",
+        arquivo: "frases/bandido.js"
+    },
 ];
 
 $(document).ready(function () { emoji(); });
