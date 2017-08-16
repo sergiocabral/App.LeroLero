@@ -21,7 +21,7 @@
         'a grana',
         'o cordão',
         'a mochila',
-        'a carteira',
+        'a bike',
     ],
     [
         'já não é seu',
@@ -33,7 +33,7 @@
         'vai ficar e tu vai embora',
         'vai passar pra nossa mão',
         'é caso perdido pra você',
-        'não é mais teu',
+        'não é mais',
     ],
     [
         'pra tu largar de ser otário.',
