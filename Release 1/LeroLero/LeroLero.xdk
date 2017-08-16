@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "61a9dbfd-d0d5-4ea0-991f-be63f4731473",
-      "lastModifiedDate": 1502766196696,
+      "lastModifiedDate": 1502844869277,
       "creationDate": 1501366114187
     },
     "sourceDirectory": "www",
@@ -125,7 +125,7 @@
         "runtime_": "Cordova 3.x",
         "name_": "Android",
         "preferences_": {
-          "android-minSdkVersion": "14",
+          "android-minSdkVersion": "16",
           "android-targetSdkVersion": "21",
           "android-installLocation": "auto",
           "Fullscreen": false,
@@ -235,8 +235,8 @@
         ],
         "addlPermissions_": "android.permission.WRITE_EXTERNAL_STORAGE",
         "excludedLibraries_": "",
-        "appVersion_": "7",
-        "appVersionCode_": "7",
+        "appVersion_": "8",
+        "appVersionCode_": "8",
         "appDescription_": "Gerador de Lero Lero. Fale tudo sem falar nada.",
         "appAuthor_": "sergio@cabral.br.com",
         "signed_": true
