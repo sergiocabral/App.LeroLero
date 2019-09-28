@@ -2,7 +2,10 @@
 
 Gerador de Lero Lero. Sucessor do App.DiscursationTabajara.
 
-## Abaixo segue informações do projeto (hoje, 2019-09-28, extinto) Intel XDK.
+
+Este projeto usa a licença indicada no arquivo README.
+
+Abaixo segue informações do projeto (hoje, 2019-09-28, extinto) Intel XDK. Que usa a licença indicada no arquivo README.md. 
 
 Blank Intel XDK and Apache Cordova Project
 ==========================================
